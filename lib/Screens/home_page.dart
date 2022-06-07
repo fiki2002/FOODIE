@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 34,
                 ),
                 Text(
-                  'Hello, Tosin',
+                  'Hello, Oluwatosin',
                   style: GoogleFonts.poppins(
                     color: const Color(0xff3E4462),
                     fontStyle: FontStyle.normal,

@@ -16,18 +16,18 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffF8F5F2),
-      body: Padding(
-        padding: const EdgeInsets.only(
-          left: 15,
-          right: 15,
-          top: 68,
-        ),
-        child: Builder(
-          builder: (context) {
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
+      body: Builder(
+        builder: (context) {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 15,
+                  right: 15,
+                  top: 68,
+                ),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
@@ -61,10 +61,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 34,
+              ),
+              const SizedBox(
+                height: 34,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 15,
+                  right: 15,
                 ),
-                Text(
+                child: Text(
                   'Hello, Oluwatosin',
                   style: GoogleFonts.poppins(
                     color: const Color(0xff3E4462),
@@ -73,10 +79,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                const SizedBox(
-                  height: 8,
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 15,
+                  right: 15,
                 ),
-                Text(
+                child: Text(
                   'What do you want to eat?',
                   style: GoogleFonts.poppins(
                     color: const Color(0xff7E7E7E),
@@ -85,10 +97,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                const SizedBox(
-                  height: 24,
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 15,
+                  right: 15,
                 ),
-                Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
@@ -193,10 +211,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 24,
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  right: 15,
+                  left: 15,
                 ),
-                Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -229,16 +253,24 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 16,
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 15,
                 ),
-                SingleChildScrollView(
+                child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
                       Container(
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
+                        height: 300,
+                        width: 323,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          image: const DecorationImage(
                             fit: BoxFit.fill,
                             image: AssetImage(
                               'assets/images/first_image.png',
@@ -250,8 +282,11 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 16,
                       ),
                       Container(
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
+                        height: 300,
+                        width: 323,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          image: const DecorationImage(
                             fit: BoxFit.fill,
                             image: AssetImage(
                               'assets/images/second_image.png',
@@ -259,13 +294,16 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                       ),
+                       const SizedBox(
+                        width: 16,
+                      ),
                     ],
                   ),
                 ),
-              ],
-            );
-          },
-        ),
+              ),
+            ],
+          );
+        },
       ),
     );
   }

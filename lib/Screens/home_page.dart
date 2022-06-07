@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:food_app/Screens/promo.dart';
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
@@ -29,14 +31,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      color: const Color(0xffE84C4F).withOpacity(0.08),
                       height: 36,
                       padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+                      decoration: BoxDecoration(
+                        color: const Color(0xffE84C4F).withOpacity(0.08),
+                        borderRadius: BorderRadius.circular(34),
+                      ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Tanke, Oke-Odo',
+                            'Mowarid Hostel, Oke-Odo',
                             style: GoogleFonts.poppins(
                               fontStyle: FontStyle.normal,
                               fontSize: 16,
@@ -44,6 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               color: const Color(0xff7E7E7E),
                             ),
                           ),
+                          const SizedBox(width: 8),
                           SvgPicture.asset(
                             'assets/images/drop_down_arrow.svg',
                           ),
@@ -190,29 +196,71 @@ class _MyHomePageState extends State<MyHomePage> {
                 const SizedBox(
                   height: 24,
                 ),
-                Text(
-                  'Today\'s promo',
-                  style: GoogleFonts.poppins(
-                    color: const Color(0xff3E4462),
-                    fontSize: 24,
-                    fontWeight: FontWeight.w500,
-                    fontStyle: FontStyle.normal,
-                  ),
-                ),
-                const SizedBox(
-                  width: 121,
-                ),
-                Text(
-                  'See all',
-                  style: GoogleFonts.poppins(
-                    color: const Color(0xffE84C4F),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    fontStyle: FontStyle.normal,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Today\'s promo',
+                      style: GoogleFonts.poppins(
+                        color: const Color(0xff3E4462),
+                        fontSize: 24,
+                        fontWeight: FontWeight.w500,
+                        fontStyle: FontStyle.normal,
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const PromoPage(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        'See all',
+                        style: GoogleFonts.poppins(
+                          color: const Color(0xffE84C4F),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.normal,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(
                   height: 16,
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Container(
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.fill,
+                            image: AssetImage(
+                              'assets/images/first_image.png',
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 16,
+                      ),
+                      Container(
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.fill,
+                            image: AssetImage(
+                              'assets/images/second_image.png',
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             );

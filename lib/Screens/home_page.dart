@@ -123,6 +123,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             borderRadius: BorderRadius.circular(8),
                           ),
                         ),
+                        const SizedBox(
+                          height: 10,
+                        ),
                         Text(
                           'Favorite',
                           style: GoogleFonts.poppins(
@@ -147,6 +150,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8),
                           ),
+                        ),
+                        const SizedBox(
+                          height: 10,
                         ),
                         Text(
                           'Cheap',
@@ -173,6 +179,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             borderRadius: BorderRadius.circular(8),
                           ),
                         ),
+                        const SizedBox(
+                          height: 10,
+                        ),
                         Text(
                           'Trend',
                           style: GoogleFonts.poppins(
@@ -197,6 +206,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8),
                           ),
+                        ),
+                       const SizedBox(
+                          height: 10,
                         ),
                         Text(
                           'More',
@@ -265,18 +277,31 @@ class _MyHomePageState extends State<MyHomePage> {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      Container(
-                        height: 300,
-                        width: 323,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          image: const DecorationImage(
-                            fit: BoxFit.fill,
-                            image: AssetImage(
-                              'assets/images/first_image.png',
+                      Stack(
+                        children: [
+                          Container(
+                            height: 300,
+                            width: 323,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              image: const DecorationImage(
+                                fit: BoxFit.fill,
+                                image: AssetImage(
+                                  'assets/images/first_image.png',
+                                ),
+                              ),
                             ),
                           ),
-                        ),
+                          Align(
+                            alignment:Alignment.topRight,
+                            child: CircleAvatar(
+                              radius: 10,
+                              child: SvgPicture.asset(
+                                'assets/images/favourite_icon.svg',
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                       const SizedBox(
                         width: 16,

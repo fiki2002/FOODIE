@@ -21,11 +21,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     const FourthScreen(),
   ];
 
-  void _onItemTapped(int index) {
-    setState(() {
-      currentIndex = index;
-    });
-  }
+
 
   @override
   Widget build(BuildContext context) {

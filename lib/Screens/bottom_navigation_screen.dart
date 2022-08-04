@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:food_app/screens/fourth_screen.dart';
+
 import 'package:food_app/screens/home_page.dart';
 import 'package:food_app/screens/promo.dart';
-import 'package:food_app/screens/third_screen.dart';
+
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({Key? key}) : super(key: key);
@@ -17,8 +17,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final pages = [
     const MyHomePage(),
     const PromoPage(),
-    const ThirdScreen(),
-    const FourthScreen(),
+    const Text(''),
+    const Text('Waiting'),
   ];
 
 

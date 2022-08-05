@@ -277,10 +277,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       Stack(
                         children: [
                           Container(
-                            margin: const EdgeInsets.only(
-                              left: 10,
-                              bottom: 10,
-                            ),
                             height: 300,
                             width: 323,
                             decoration: BoxDecoration(
@@ -333,7 +329,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     ),
                                   ),
                                   Text(
-                                    'With Homemade Sauce,',
+                                    'With Homemade Sauce',
                                     style: GoogleFonts.poppins(
                                       color: const Color(0xff7E7E7E),
                                       fontStyle: FontStyle.normal,
@@ -384,7 +380,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           borderRadius: BorderRadius.circular(8),
                           image: const DecorationImage(
                             fit: BoxFit.cover,
-                            image: AssetImage('assets/images/first_image.png'),
+                            image: AssetImage('assets/images/ham.jpg'),
                           ),
                         ),
                       ),

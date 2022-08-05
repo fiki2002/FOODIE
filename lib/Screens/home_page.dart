@@ -306,11 +306,16 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           Positioned(
                             bottom: 20,
-                            right: 20,
+                            right: 10,
+                            left: 20,
                             child: Container(
-                              // width: 200,
-                              // height: 101,
-                              padding: const EdgeInsets.all(10),
+                              width: 200,
+                              height: 101,
+                              padding: const EdgeInsets.only(
+                                left: 10,
+                                top: 10,
+                                bottom: 5,
+                              ),
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(12),
@@ -330,20 +335,38 @@ class _MyHomePageState extends State<MyHomePage> {
                                   Text(
                                     'With Homemade Sauce,',
                                     style: GoogleFonts.poppins(
-                                      color: const Color(0xff3E4462),
+                                      color: const Color(0xff7E7E7E),
                                       fontStyle: FontStyle.normal,
                                       fontSize: 18,
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ),
-                                  Text(
-                                    '#2500',
-                                    style: GoogleFonts.poppins(
-                                      color: const Color(0xff3E4462),
-                                      fontStyle: FontStyle.normal,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w500,
-                                    ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        '2500',
+                                        style: GoogleFonts.poppins(
+                                          color: const Color(0xff3E4462),
+                                          fontStyle: FontStyle.normal,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 11,
+                                      ),
+                                      Text(
+                                        '3500',
+                                        style: GoogleFonts.poppins(
+                                          color: const Color(0xffCACACA),
+                                          fontStyle: FontStyle.normal,
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w400,
+                                          decoration:
+                                              TextDecoration.lineThrough,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),

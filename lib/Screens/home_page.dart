@@ -277,6 +277,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Stack(
                         children: [
                           Container(
+                            margin:const EdgeInsets.only(left: 10,),
                             height: 300,
                             width: 323,
                             decoration: BoxDecoration(

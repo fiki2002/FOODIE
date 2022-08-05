@@ -16,24 +16,59 @@ class _PromoPageState extends State<PromoPage> {
       backgroundColor: const Color(0xffF8F5F2),
       body: Padding(
         padding: const EdgeInsets.only(
-          left: 15,
+          left: 23,
           right: 15,
           top: 68,
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Column(
           children: [
-            SvgPicture.asset('assets/images/back.svg'),
-            Text(
-              'Today\'s Promo',
-              style: GoogleFonts.poppins(
-                color: const Color(0xff3E4462),
-                fontWeight: FontWeight.w500,
-                fontSize: 24,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SvgPicture.asset('assets/images/back.svg'),
+                Text(
+                  'Today\'s Promo',
+                  style: GoogleFonts.poppins(
+                    color: const Color(0xff3E4462),
+                    fontWeight: FontWeight.w500,
+                    fontSize: 24,
+                  ),
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+              ],
             ),
             const SizedBox(
-              height: 20,
+              height: 25,
+            ),
+            Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 10,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SvgPicture.asset('assets/images/filters.svg'),
+                      Text(
+                        'Filters',
+                        style: GoogleFonts.poppins(
+                          color: const Color(0xff3E4462),
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
             ),
           ],
         ),

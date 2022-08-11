@@ -54,10 +54,33 @@ class _PromoPageState extends State<PromoPage> {
               const SizedBox(
                 height: 20,
               ),
-              Row(
-                children: [
-                 
-                ],
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    buildContainer(
+                      title: 'Filters',
+                      url: 'assets/images/filters.svg',
+                      isSelected: false,
+                    ),
+                    buildContainer(
+                      title: 'Nearby',
+                      url: 'assets/images/filters.svg',
+                      isSelected: false,
+                    ),
+                    buildContainer(
+                      title: 'Above 4.5',
+                      url: 'assets/images/filters.svg',
+                      isSelected: false,
+                    ),
+                    buildContainer(
+                      title: 'Cheap',
+                      url: 'assets/images/filters.svg',
+                      isSelected: false,
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -66,12 +89,11 @@ class _PromoPageState extends State<PromoPage> {
     );
   }
 
-  Widget buildContainer(
-     String title,
-     Color textColor,
-     String url,
-     bool isSelected ,
-  ) {
+  Widget buildContainer({
+    required String title,
+    required String url,
+    required bool isSelected,
+  }) {
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: 8,
@@ -80,6 +102,11 @@ class _PromoPageState extends State<PromoPage> {
       decoration: BoxDecoration(
         color: isSelected ? const Color(0xffE84C4F) : Colors.white,
         borderRadius: BorderRadius.circular(4),
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.black12,
+          ),
+        ],
       ),
       child: Row(
         children: [
@@ -90,7 +117,7 @@ class _PromoPageState extends State<PromoPage> {
           Text(
             title,
             style: GoogleFonts.poppins(
-              color: const Color(0xff3E4462),
+              color: isSelected ? Colors.white : const Color(0xff3E4462),
               fontSize: 12,
               fontWeight: FontWeight.w400,
             ),

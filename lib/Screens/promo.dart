@@ -13,78 +13,80 @@ class _PromoPageState extends State<PromoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Colors.white,
-              Color(0xffF8F5F2),
-            ],
-            stops: [0.05, 0.5],
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.only(
-            left: 23,
-            right: 15,
-            top: 50,
-          ),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: Stack(
+        children: [
+          Container(
+            width: double.infinity,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.white,
+                  Color(0xffF8F5F2),
+                ],
+                stops: [0.03, 0.5],
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.only(
+                left: 23,
+                right: 15,
+                top: 40,
+              ),
+              child: Column(
                 children: [
-                  SvgPicture.asset('assets/images/back.svg'),
-                  Text(
-                    'Today\'s Promo',
-                    style: GoogleFonts.poppins(
-                      color: const Color(0xff3E4462),
-                      fontWeight: FontWeight.w500,
-                      fontSize: 24,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SvgPicture.asset('assets/images/back.svg'),
+                      Text(
+                        'Today\'s Promo',
+                        style: GoogleFonts.poppins(
+                          color: const Color(0xff3E4462),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 24,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                    ],
                   ),
                   const SizedBox(
-                    width: 20,
+                    height: 15,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      buildContainer(
+                        title: 'Filters',
+                        url: 'assets/images/filters.svg',
+                        isSelected: false,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      buildContainer(
+                        title: 'Nearby',
+                        url: 'assets/images/filters.svg',
+                        isSelected: true,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      buildContainer(
+                        title: 'Above 4.5',
+                        url: 'assets/images/filters.svg',
+                        isSelected: false,
+                      ),
+                    ],
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    buildContainer(
-                      title: 'Filters',
-                      url: 'assets/images/filters.svg',
-                      isSelected: false,
-                    ),
-                    buildContainer(
-                      title: 'Nearby',
-                      url: 'assets/images/filters.svg',
-                      isSelected: false,
-                    ),
-                    buildContainer(
-                      title: 'Above 4.5',
-                      url: 'assets/images/filters.svg',
-                      isSelected: false,
-                    ),
-                    buildContainer(
-                      title: 'Cheap',
-                      url: 'assets/images/filters.svg',
-                      isSelected: false,
-                    ),
-                  ],
-                ),
-              ),
-            ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
@@ -97,14 +99,15 @@ class _PromoPageState extends State<PromoPage> {
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: 8,
-        vertical: 10,
+        vertical: 9,
       ),
       decoration: BoxDecoration(
         color: isSelected ? const Color(0xffE84C4F) : Colors.white,
         borderRadius: BorderRadius.circular(4),
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
-            color: Colors.black12,
+            color: Colors.grey.withOpacity(0.5),
+            blurRadius: 5,
           ),
         ],
       ),

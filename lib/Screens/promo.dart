@@ -60,37 +60,42 @@ class _PromoPageState extends State<PromoPage> {
                   const SizedBox(
                     height: 15,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      buildContainer(
-                        title: 'Filters',
-                        url: 'assets/images/filters.svg',
-                        isSelected: false,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      buildContainer(
-                        title: 'Nearby',
-                        url: 'assets/images/location_icon.svg',
-                        isSelected: true,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      buildContainer(
-                        title: 'Above 4.5',
-                        url: 'assets/images/star.svg',
-                        isSelected: false,
-                      ),
-                      buildContainer(
-                        title: 'Affordable',
-                        url: 'assets/images/tag_icon.svg',
-                        isSelected: false,
-                      ),
-                    ],
+                  SizedBox(
+                    height: 38,
+                    width:400,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        buildContainer(
+                          title: 'Filters',
+                          url: 'assets/images/filters.svg',
+                          isSelected: false,
+                        ),
+                          const SizedBox(
+                          width: 10,
+                        ),
+                        buildContainer(
+                          title: 'Nearby',
+                          url: 'assets/images/location_icon.svg',
+                          isSelected: true,
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        buildContainer(
+                          title: 'Above 4.5',
+                          url: 'assets/images/star.svg',
+                          isSelected: false,
+                        ),
+                        buildContainer(
+                          title: 'Affordable',
+                          url: 'assets/images/tag_icon.svg',
+                          isSelected: false,
+                        ),
+                      ],
+                    ),
                   ),
+                
                 ],
               ),
             ),

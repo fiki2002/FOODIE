@@ -25,21 +25,25 @@ class _PromoPageState extends State<PromoPage> {
                   Colors.white,
                   Color(0xffF8F5F2),
                 ],
-                stops: [0.03, 0.5],
+                stops: [0.5, 0.5],
               ),
             ),
             child: Padding(
               padding: const EdgeInsets.only(
                 left: 23,
                 right: 15,
-                top: 40,
+                top: 73,
               ),
               child: Column(
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SvgPicture.asset('assets/images/back.svg'),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.pop(context);
+                        },
+                        child: SvgPicture.asset('assets/images/back.svg')),
                       Text(
                         'Today\'s Promo',
                         style: GoogleFonts.poppins(
@@ -69,7 +73,7 @@ class _PromoPageState extends State<PromoPage> {
                       ),
                       buildContainer(
                         title: 'Nearby',
-                        url: 'assets/images/filters.svg',
+                        url: 'assets/images/location_icon.svg',
                         isSelected: true,
                       ),
                       const SizedBox(
@@ -77,7 +81,12 @@ class _PromoPageState extends State<PromoPage> {
                       ),
                       buildContainer(
                         title: 'Above 4.5',
-                        url: 'assets/images/filters.svg',
+                        url: 'assets/images/star.svg',
+                        isSelected: false,
+                      ),
+                      buildContainer(
+                        title: 'Affordable',
+                        url: 'assets/images/tag_icon.svg',
                         isSelected: false,
                       ),
                     ],

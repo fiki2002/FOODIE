@@ -12,95 +12,83 @@ class PromoPage extends StatefulWidget {
 class _PromoPageState extends State<PromoPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: CustomScrollView(
-       slivers: [
-          // Container(
-          //   width: double.infinity,
-          //   decoration: const BoxDecoration(
-          //     gradient: LinearGradient(
-          //       begin: Alignment.topCenter,
-          //       end: Alignment.bottomCenter,
-          //       colors: [
-          //         Colors.white,
-          //         Color(0xffF8F5F2),
-          //       ],
-          //       stops: [0.5, 0.5],
-          //     ),
-          //   ),
-          //   child: Padding(
-          //     padding: const EdgeInsets.only(
-          //       left: 23,
-          //       right: 15,
-          //       top: 73,
-          //     ),
-          //     child: Column(
-          //       children: [
-          //         Row(
-          //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //           children: [
-          //             GestureDetector(
-          //               onTap: (){
-          //                 Navigator.pop(context);
-          //               },
-          //               child: SvgPicture.asset('assets/images/back.svg')),
-          //             Text(
-          //               'Today\'s Promo',
-          //               style: GoogleFonts.poppins(
-          //                 color: const Color(0xff3E4462),
-          //                 fontWeight: FontWeight.w500,
-          //                 fontSize: 24,
-          //               ),
-          //             ),
-          //             const SizedBox(
-          //               width: 20,
-          //             ),
-          //           ],
-          //         ),
-          //         const SizedBox(
-          //           height: 15,
-          //         ),
-          //         SizedBox(
-          //           height: 38,
-          //           width:400,
-          //           child: ListView(
-          //             scrollDirection: Axis.horizontal,
-          //             children: [
-          //               buildContainer(
-          //                 title: 'Filters',
-          //                 url: 'assets/images/filters.svg',
-          //                 isSelected: false,
-          //               ),
-          //                 const SizedBox(
-          //                 width: 10,
-          //               ),
-          //               buildContainer(
-          //                 title: 'Nearby',
-          //                 url: 'assets/images/location_icon.svg',
-          //                 isSelected: true,
-          //               ),
-          //               const SizedBox(
-          //                 width: 10,
-          //               ),
-          //               buildContainer(
-          //                 title: 'Above 4.5',
-          //                 url: 'assets/images/star.svg',
-          //                 isSelected: false,
-          //               ),
-          //               buildContainer(
-          //                 title: 'Affordable',
-          //                 url: 'assets/images/tag_icon.svg',
-          //                 isSelected: false,
-          //               ),
-          //             ],
-          //           ),
-          //         ),
-                
-          //       ],
-          //     ),
-          //   ),
-          // ),
-        ],
+    return Scaffold(
+      body: Container(
+        width: double.infinity,
+        color: const Color(0xffF8F5F2),
+        child: Padding(
+          padding: const EdgeInsets.only(
+            left: 23,
+            right: 15,
+            top: 73,
+          ),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: SvgPicture.asset('assets/images/back.svg')),
+                  Text(
+                    'Today\'s Promo',
+                    style: GoogleFonts.poppins(
+                      color: const Color(0xff3E4462),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 24,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              SizedBox(
+                height: 38,
+                width: 400,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    buildContainer(
+                      title: 'Filters',
+                      url: 'assets/images/filters.svg',
+                      isSelected: false,
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    buildContainer(
+                      title: 'Nearby',
+                      url: 'assets/images/location_icon.svg',
+                      isSelected: true,
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    buildContainer(
+                      title: 'Above 4.5',
+                      url: 'assets/images/star.svg',
+                      isSelected: false,
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    buildContainer(
+                      title: 'Affordable',
+                      url: 'assets/images/tag_icon.svg',
+                      isSelected: false,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

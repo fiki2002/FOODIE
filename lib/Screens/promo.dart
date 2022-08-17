@@ -13,82 +13,90 @@ class _PromoPageState extends State<PromoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        color: const Color(0xffF8F5F2),
-        child: Padding(
-          padding: const EdgeInsets.only(
-            left: 23,
-            right: 15,
-            top: 73,
+      backgroundColor: const Color(0xffF8F5F2),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 10,
+              right: 15,
+              top: 73,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: SvgPicture.asset('assets/images/back.svg')),
+                Text(
+                  'Today\'s Promo',
+                  style: GoogleFonts.poppins(
+                    color: const Color(0xff3E4462),
+                    fontWeight: FontWeight.w500,
+                    fontSize: 24,
+                  ),
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+              ],
+            ),
           ),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          const SizedBox(
+            height: 15,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 15,
+              right: 10,
+            ),
+            child: SizedBox(
+              height: 38,
+              width: 400,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
                 children: [
-                  GestureDetector(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: SvgPicture.asset('assets/images/back.svg')),
-                  Text(
-                    'Today\'s Promo',
-                    style: GoogleFonts.poppins(
-                      color: const Color(0xff3E4462),
-                      fontWeight: FontWeight.w500,
-                      fontSize: 24,
-                    ),
+                  buildContainer(
+                    title: 'Filters',
+                    url: 'assets/images/filters.svg',
+                    isSelected: false,
                   ),
                   const SizedBox(
-                    width: 20,
+                    width: 10,
+                  ),
+                  buildContainer(
+                    title: 'Nearby',
+                    url: 'assets/images/location_icon.svg',
+                    isSelected: true,
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  buildContainer(
+                    title: 'Above 4.5',
+                    url: 'assets/images/star.svg',
+                    isSelected: false,
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  buildContainer(
+                    title: 'Affordable',
+                    url: 'assets/images/tag_icon.svg',
+                    isSelected: false,
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 15,
-              ),
-              SizedBox(
-                height: 38,
-                width: 400,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    buildContainer(
-                      title: 'Filters',
-                      url: 'assets/images/filters.svg',
-                      isSelected: false,
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    buildContainer(
-                      title: 'Nearby',
-                      url: 'assets/images/location_icon.svg',
-                      isSelected: true,
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    buildContainer(
-                      title: 'Above 4.5',
-                      url: 'assets/images/star.svg',
-                      isSelected: false,
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    buildContainer(
-                      title: 'Affordable',
-                      url: 'assets/images/tag_icon.svg',
-                      isSelected: false,
-                    ),
-                  ],
-                ),
-              ),
-            ],
+            ),
           ),
-        ),
+          const SizedBox(
+            height: 10,
+            width: double.infinity,
+          ),
+          listContainer(),
+        ],
       ),
     );
   }
@@ -128,6 +136,101 @@ class _PromoPageState extends State<PromoPage> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget listContainer() {
+    return Container(
+      decoration: BoxDecoration(
+        color: const Color(0xffFFFFFF).withOpacity(0.5),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'BBQ Saga',
+                  style: GoogleFonts.poppins(
+                    color: const Color(0xff3E4462),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                Row(
+                  children: [
+                    SvgPicture.asset('assets/images/star_2.svg'),
+                    const SizedBox(width: 4),
+                    Text(
+                      '5.0',
+                      style: GoogleFonts.poppins(
+                        color: const Color(0xff3E4462),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Mowarid Hostel, Tanke',
+                  style: GoogleFonts.poppins(
+                    color: const Color(0xff7E7E7E),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                Text(
+                  '1 Km',
+                  style: GoogleFonts.poppins(
+                    color: const Color(0xff7E7E7E),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            Container(
+              width: double.infinity,
+              height: 4,
+              color: const Color(0xffEFEFF2),
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            Row(
+              children: [
+                Container(
+                  height: 96,
+                  width: 72,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4),
+                    image: const DecorationImage(
+                      fit: BoxFit.fill,
+                      image: AssetImage(
+                        'assets/images/food.jpg',
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

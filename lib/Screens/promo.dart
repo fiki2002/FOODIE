@@ -213,6 +213,7 @@ class _PromoPageState extends State<PromoPage> {
               height: 16,
             ),
             Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   height: 96,
@@ -227,8 +228,95 @@ class _PromoPageState extends State<PromoPage> {
                     ),
                   ),
                 ),
+                const SizedBox(width: 15),
+                Column(
+                  children: [
+                    Text(
+                      'BBQ Special',
+                      style: GoogleFonts.poppins(
+                        color: const Color(0xff3E4462),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          '2500',
+                          style: GoogleFonts.poppins(
+                            color: const Color(0xff3E4462),
+                            fontStyle: FontStyle.normal,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 11,
+                        ),
+                        Text(
+                          '3500',
+                          style: GoogleFonts.poppins(
+                            color: const Color(0xffCACACA),
+                            fontStyle: FontStyle.normal,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                            decoration: TextDecoration.lineThrough,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 9,
+                    ),
+                    Row(
+                      children: [
+                        CircleAvatar(
+                            radius: 8,
+                            backgroundColor: const Color(0xffEDA345),
+                            child: Center(
+                              child: Text(
+                                '%',
+                                style: GoogleFonts.poppins(
+                                  color: Colors.white,
+                                  fontSize: 10,
+                                ),
+                              ),
+                            )),
+                        const SizedBox(
+                          width: 2,
+                        ),
+                        Text(
+                          'Free delivery',
+                          style: GoogleFonts.poppins(
+                            color: const Color(0xff7E7E7E),
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                PhysicalModel(
+                  color: Colors.black,
+                  elevation: 5,
+                  shape: BoxShape.circle,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.white,
+                    radius: 16,
+                    child: SvgPicture.asset(
+                      'assets/images/favourite_icon.svg',
+                    ),
+                  ),
+                ),
+   
+
               ],
             ),
+            
           ],
         ),
       ),

@@ -279,7 +279,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       Stack(
                         children: [
                           Container(
-                            margin:const EdgeInsets.only(left: 10,),
+                            margin: const EdgeInsets.only(
+                              left: 10,
+                            ),
                             height: 300,
                             width: 323,
                             decoration: BoxDecoration(
@@ -373,23 +375,105 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ],
                       ),
-                      const SizedBox(
-                        width: 16,
-                      ),
-                      Container(
-                        height: 300,
-                        width: 323,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          image: const DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage('assets/images/ham.jpg'),
+                      Stack(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(
+                              left: 10,
+                            ),
+                            height: 300,
+                            width: 323,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              image: const DecorationImage(
+                                fit: BoxFit.fill,
+                                image: AssetImage(
+                                  'assets/images/ham.jpg',
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 16,
-                      ),
+                          Positioned(
+                            top: 10,
+                            right: 10,
+                            child: CircleAvatar(
+                              radius: 15,
+                              backgroundColor: Colors.white,
+                              child: SvgPicture.asset(
+                                'assets/images/favourite_icon.svg',
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            bottom: 20,
+                            right: 10,
+                            left: 20,
+                            child: Container(
+                              width: 200,
+                              height: 101,
+                              padding: const EdgeInsets.only(
+                                left: 10,
+                                top: 10,
+                                bottom: 5,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'HAM Fiesta',
+                                    style: GoogleFonts.poppins(
+                                      color: const Color(0xff3E4462),
+                                      fontStyle: FontStyle.normal,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  Text(
+                                    'With extra steak',
+                                    style: GoogleFonts.poppins(
+                                      color: const Color(0xff7E7E7E),
+                                      fontStyle: FontStyle.normal,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        '2000',
+                                        style: GoogleFonts.poppins(
+                                          color: const Color(0xff3E4462),
+                                          fontStyle: FontStyle.normal,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 11,
+                                      ),
+                                      Text(
+                                        '1500',
+                                        style: GoogleFonts.poppins(
+                                          color: const Color(0xffCACACA),
+                                          fontStyle: FontStyle.normal,
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w400,
+                                          decoration:
+                                              TextDecoration.lineThrough,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),                    
                     ],
                   ),
                 ),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../cores/constants/color.dart';
+
 class PromoPage extends StatefulWidget {
   const PromoPage({Key? key}) : super(key: key);
 
@@ -320,12 +322,172 @@ class _PromoPageState extends State<PromoPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                // SvgPicture.asset('assets/images/edit.svg'),
                 const SizedBox(
                   width: 5,
                 ),
                 Container(
-                  decoration: const BoxDecoration(),
+                  height: 36,
+                  width: 36,
+                  decoration: BoxDecoration(
+                    color: ThemeClass.boxColor,
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  child: const Icon(
+                    Icons.remove,
+                    color: Colors.white,
+                  ),
+                ),
+                Container(
+                  height: 36,
+                  width: 36,
+                  decoration: BoxDecoration(
+                    color: const Color(0xffF8F5F2),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  child: const Center(
+                    child: Text('1'),
+                  ),
+                ),
+                Container(
+                  height: 36,
+                  width: 36,
+                  decoration: BoxDecoration(
+                    color: ThemeClass.brandPrimary,
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  child: const Icon(
+                    Icons.add,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 36,
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  height: 96,
+                  width: 72,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4),
+                    image: const DecorationImage(
+                      fit: BoxFit.fill,
+                      image: AssetImage(
+                        'assets/images/bbq.jpg',
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 15),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Barbeque & vibes',
+                      style: GoogleFonts.poppins(
+                        color: const Color(0xff3E4462),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          '3500',
+                          style: GoogleFonts.poppins(
+                            color: const Color(0xff3E4462),
+                            fontStyle: FontStyle.normal,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 11,
+                        ),
+                        Text(
+                          '4000',
+                          style: GoogleFonts.poppins(
+                            color: const Color(0xffCACACA),
+                            fontStyle: FontStyle.normal,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                            decoration: TextDecoration.lineThrough,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 9,
+                    ),
+                    Row(
+                      children: [
+                        CircleAvatar(
+                            radius: 8,
+                            backgroundColor: const Color(0xffEDA345),
+                            child: Center(
+                              child: Text(
+                                '%',
+                                style: GoogleFonts.poppins(
+                                  color: Colors.white,
+                                  fontSize: 10,
+                                ),
+                              ),
+                            )),
+                        const SizedBox(
+                          width: 2,
+                        ),
+                        Text(
+                          'Delivery discount',
+                          style: GoogleFonts.poppins(
+                            color: const Color(0xff7E7E7E),
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                const Expanded(
+                  child: SizedBox(),
+                ),
+                PhysicalModel(
+                  color: Colors.black,
+                  elevation: 5,
+                  shape: BoxShape.circle,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.white,
+                    radius: 16,
+                    child: SvgPicture.asset(
+                      'assets/images/favourite_icon.svg',
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                const Expanded(
+                  child: SizedBox(),
+                ),
+                Container(
+                  height: 36,
+                  width: 36,
+                  decoration: BoxDecoration(
+                    color: ThemeClass.brandPrimary,
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  child: const Icon(
+                    Icons.add,
+                    color: Colors.white,
+                  ),
                 ),
               ],
             ),

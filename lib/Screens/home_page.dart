@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:food_app/Screens/promo.dart';
 
+import '../cores/constants/color.dart';
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
@@ -35,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         height: 36,
                         padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
                         decoration: BoxDecoration(
-                          color: const Color(0xffE84C4F).withOpacity(0.08),
+                          color: ThemeClass.brandPrimary.withOpacity(0.08),
                           borderRadius: BorderRadius.circular(34),
                         ),
                         child: Row(
@@ -47,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 fontStyle: FontStyle.normal,
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400,
-                                color: const Color(0xff7E7E7E),
+                                color: ThemeClass.secondaryColor,
                               ),
                             ),
                             const SizedBox(width: 8),
@@ -74,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Text(
                     'Hello, Oluwatosin',
                     style: GoogleFonts.poppins(
-                      color: const Color(0xff3E4462),
+                      color: ThemeClass.primaryColor,
                       fontStyle: FontStyle.normal,
                       fontSize: 28,
                       fontWeight: FontWeight.w600,
@@ -92,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Text(
                     'What do you want to eat?',
                     style: GoogleFonts.poppins(
-                      color: const Color(0xff7E7E7E),
+                      color: ThemeClass.secondaryColor,
                       fontStyle: FontStyle.normal,
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
@@ -120,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               'assets/images/favourite_icon.svg',
                             ),
                             decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: ThemeClass.containerColor,
                               borderRadius: BorderRadius.circular(8),
                             ),
                           ),
@@ -130,7 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           Text(
                             'Favorite',
                             style: GoogleFonts.poppins(
-                              color: const Color(0xff7E7E7E),
+                              color: ThemeClass.secondaryColor,
                               fontStyle: FontStyle.normal,
                               fontSize: 14,
                               fontWeight: FontWeight.w500,
@@ -148,7 +150,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               'assets/images/tag_icon.svg',
                             ),
                             decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: ThemeClass.containerColor,
                               borderRadius: BorderRadius.circular(8),
                             ),
                           ),
@@ -158,7 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           Text(
                             'Cheap',
                             style: GoogleFonts.poppins(
-                              color: const Color(0xff7E7E7E),
+                              color: ThemeClass.secondaryColor,
                               fontStyle: FontStyle.normal,
                               fontSize: 14,
                               fontWeight: FontWeight.w500,
@@ -176,7 +178,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               'assets/images/trend_icon.svg',
                             ),
                             decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: ThemeClass.containerColor,
                               borderRadius: BorderRadius.circular(8),
                             ),
                           ),
@@ -186,7 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           Text(
                             'Trend',
                             style: GoogleFonts.poppins(
-                              color: const Color(0xff7E7E7E),
+                              color: ThemeClass.secondaryColor,
                               fontStyle: FontStyle.normal,
                               fontSize: 14,
                               fontWeight: FontWeight.w500,
@@ -204,7 +206,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               'assets/images/menu_icon.svg',
                             ),
                             decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: ThemeClass.containerColor,
                               borderRadius: BorderRadius.circular(8),
                             ),
                           ),
@@ -214,7 +216,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           Text(
                             'More',
                             style: GoogleFonts.poppins(
-                              color: const Color(0xff7E7E7E),
+                              color: ThemeClass.secondaryColor,
                               fontStyle: FontStyle.normal,
                               fontSize: 14,
                               fontWeight: FontWeight.w500,
@@ -239,7 +241,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Text(
                         'Today\'s promo',
                         style: GoogleFonts.poppins(
-                          color: const Color(0xff3E4462),
+                          color: ThemeClass.primaryColor,
                           fontSize: 24,
                           fontWeight: FontWeight.w500,
                           fontStyle: FontStyle.normal,

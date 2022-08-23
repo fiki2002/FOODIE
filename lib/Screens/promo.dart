@@ -300,6 +300,9 @@ class _PromoPageState extends State<PromoPage> {
                     ),
                   ],
                 ),
+                const Expanded(
+                  child: SizedBox(),
+                ),
                 PhysicalModel(
                   color: Colors.black,
                   elevation: 5,
@@ -317,12 +320,12 @@ class _PromoPageState extends State<PromoPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                SvgPicture.asset('assets/images/edit.svg'),
-                const SizedBox(width: 5,),
+                // SvgPicture.asset('assets/images/edit.svg'),
+                const SizedBox(
+                  width: 5,
+                ),
                 Container(
-                  decoration: const BoxDecoration(
-
-                  ),
+                  decoration: const BoxDecoration(),
                 ),
               ],
             ),

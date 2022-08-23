@@ -6,6 +6,6 @@ class ThemeClass {
   static const Color brandPrimary = Color(0xffE84C4F);
   static const Color brandSecondary = Color(0xffEDA345);
   static const Color containerColor = Color(0xffFFFFFF);
-  static const Color containerMColor = Color(0xffE1E1E1);
+  static const Color  boxColor = Color(0xffE1E1E1);
   
 }

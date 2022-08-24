@@ -373,18 +373,18 @@ class MyContainer extends StatelessWidget {
                     borderRadius: BorderRadius.circular(4),
                   ),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       const Icon(
                         Icons.add,
                         color: Colors.white,
-                        size: 15,
+                        size: 20,
                       ),
                       Text(
                         'Add',
                         style: GoogleFonts.poppins(
                           color: ThemeClass.containerColor,
-                          fontSize: 12,
+                          fontSize: 15,
                         ),
                       ),
                     ],

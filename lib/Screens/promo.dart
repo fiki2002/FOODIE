@@ -97,7 +97,15 @@ class _PromoPageState extends State<PromoPage> {
             height: 10,
             width: double.infinity,
           ),
-          listContainer(),
+          Container(
+            margin: const EdgeInsets.all(10),
+            child: ListView.separated(
+              shrinkWrap: true,
+              itemBuilder: (_, __) => listContainer(),
+              separatorBuilder: (_, __) => const SizedBox(height: 10),
+              itemCount: 1,
+            ),
+          ),
         ],
       ),
     );
@@ -143,357 +151,739 @@ class _PromoPageState extends State<PromoPage> {
   }
 
   Widget listContainer() {
-    return Container(
-      decoration: BoxDecoration(
-        color: const Color(0xffFFFFFF).withOpacity(0.5),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Column(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            color: const Color(0xffFFFFFF).withOpacity(0.5),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
               children: [
-                Text(
-                  'BBQ Saga',
-                  style: GoogleFonts.poppins(
-                    color: const Color(0xff3E4462),
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SvgPicture.asset('assets/images/star_2.svg'),
-                    const SizedBox(width: 4),
                     Text(
-                      '5.0',
+                      'BBQ Saga',
                       style: GoogleFonts.poppins(
                         color: const Color(0xff3E4462),
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        SvgPicture.asset('assets/images/star_2.svg'),
+                        const SizedBox(width: 4),
+                        Text(
+                          '5.0',
+                          style: GoogleFonts.poppins(
+                            color: const Color(0xff3E4462),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Mowarid Hostel, Tanke',
+                      style: GoogleFonts.poppins(
+                        color: const Color(0xff7E7E7E),
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                       ),
-                    )
-                  ],
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Mowarid Hostel, Tanke',
-                  style: GoogleFonts.poppins(
-                    color: const Color(0xff7E7E7E),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                Text(
-                  '1 Km',
-                  style: GoogleFonts.poppins(
-                    color: const Color(0xff7E7E7E),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            Container(
-              width: double.infinity,
-              height: 4,
-              color: const Color(0xffEFEFF2),
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  height: 96,
-                  width: 72,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                    image: const DecorationImage(
-                      fit: BoxFit.fill,
-                      image: AssetImage(
-                        'assets/images/food.jpg',
-                      ),
                     ),
-                  ),
-                ),
-                const SizedBox(width: 15),
-                Column(
-                  children: [
                     Text(
-                      'BBQ Special',
+                      '1 Km',
                       style: GoogleFonts.poppins(
-                        color: const Color(0xff3E4462),
-                        fontSize: 16,
+                        color: const Color(0xff7E7E7E),
+                        fontSize: 14,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          '2500',
-                          style: GoogleFonts.poppins(
-                            color: const Color(0xff3E4462),
-                            fontStyle: FontStyle.normal,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 11,
-                        ),
-                        Text(
-                          '3500',
-                          style: GoogleFonts.poppins(
-                            color: const Color(0xffCACACA),
-                            fontStyle: FontStyle.normal,
-                            fontSize: 15,
-                            fontWeight: FontWeight.w400,
-                            decoration: TextDecoration.lineThrough,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 9,
-                    ),
-                    Row(
-                      children: [
-                        CircleAvatar(
-                            radius: 8,
-                            backgroundColor: const Color(0xffEDA345),
-                            child: Center(
-                              child: Text(
-                                '%',
-                                style: GoogleFonts.poppins(
-                                  color: Colors.white,
-                                  fontSize: 10,
-                                ),
-                              ),
-                            )),
-                        const SizedBox(
-                          width: 2,
-                        ),
-                        Text(
-                          'Free delivery',
-                          style: GoogleFonts.poppins(
-                            color: const Color(0xff7E7E7E),
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ],
-                    ),
                   ],
                 ),
-                const Expanded(
-                  child: SizedBox(),
-                ),
-                PhysicalModel(
-                  color: Colors.black,
-                  elevation: 5,
-                  shape: BoxShape.circle,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.white,
-                    radius: 16,
-                    child: SvgPicture.asset(
-                      'assets/images/favourite_icon.svg',
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
                 const SizedBox(
-                  width: 5,
+                  height: 16,
                 ),
                 Container(
-                  height: 36,
-                  width: 36,
-                  decoration: BoxDecoration(
-                    color: ThemeClass.boxColor,
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: const Icon(
-                    Icons.remove,
-                    color: Colors.white,
-                  ),
+                  width: double.infinity,
+                  height: 4,
+                  color: const Color(0xffEFEFF2),
                 ),
-                Container(
-                  height: 36,
-                  width: 36,
-                  decoration: BoxDecoration(
-                    color: const Color(0xffF8F5F2),
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: const Center(
-                    child: Text('1'),
-                  ),
+                const SizedBox(
+                  height: 16,
                 ),
-                Container(
-                  height: 36,
-                  width: 36,
-                  decoration: BoxDecoration(
-                    color: ThemeClass.brandPrimary,
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: const Icon(
-                    Icons.add,
-                    color: Colors.white,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 36,
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  height: 96,
-                  width: 72,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                    image: const DecorationImage(
-                      fit: BoxFit.fill,
-                      image: AssetImage(
-                        'assets/images/bbq.jpg',
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 15),
-                Column(
+                Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Barbeque & vibes',
-                      style: GoogleFonts.poppins(
-                        color: const Color(0xff3E4462),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
+                    Container(
+                      height: 96,
+                      width: 72,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(4),
+                        image: const DecorationImage(
+                          fit: BoxFit.fill,
+                          image: AssetImage(
+                            'assets/images/food.jpg',
+                          ),
+                        ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    Row(
+                    const SizedBox(width: 15),
+                    Column(
                       children: [
                         Text(
-                          '3500',
+                          'BBQ Special',
                           style: GoogleFonts.poppins(
                             color: const Color(0xff3E4462),
-                            fontStyle: FontStyle.normal,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
                           ),
                         ),
                         const SizedBox(
-                          width: 11,
+                          height: 8,
                         ),
-                        Text(
-                          '4000',
-                          style: GoogleFonts.poppins(
-                            color: const Color(0xffCACACA),
-                            fontStyle: FontStyle.normal,
-                            fontSize: 15,
-                            fontWeight: FontWeight.w400,
-                            decoration: TextDecoration.lineThrough,
-                          ),
+                        Row(
+                          children: [
+                            Text(
+                              '2500',
+                              style: GoogleFonts.poppins(
+                                color: const Color(0xff3E4462),
+                                fontStyle: FontStyle.normal,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 11,
+                            ),
+                            Text(
+                              '3500',
+                              style: GoogleFonts.poppins(
+                                color: const Color(0xffCACACA),
+                                fontStyle: FontStyle.normal,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
+                                decoration: TextDecoration.lineThrough,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 9,
+                        ),
+                        Row(
+                          children: [
+                            CircleAvatar(
+                                radius: 8,
+                                backgroundColor: const Color(0xffEDA345),
+                                child: Center(
+                                  child: Text(
+                                    '%',
+                                    style: GoogleFonts.poppins(
+                                      color: Colors.white,
+                                      fontSize: 10,
+                                    ),
+                                  ),
+                                )),
+                            const SizedBox(
+                              width: 2,
+                            ),
+                            Text(
+                              'Free delivery',
+                              style: GoogleFonts.poppins(
+                                color: const Color(0xff7E7E7E),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 9,
+                    const Expanded(
+                      child: SizedBox(),
                     ),
-                    Row(
-                      children: [
-                        CircleAvatar(
-                            radius: 8,
-                            backgroundColor: const Color(0xffEDA345),
-                            child: Center(
-                              child: Text(
-                                '%',
-                                style: GoogleFonts.poppins(
-                                  color: Colors.white,
-                                  fontSize: 10,
-                                ),
-                              ),
-                            )),
-                        const SizedBox(
-                          width: 2,
+                    PhysicalModel(
+                      color: Colors.black,
+                      elevation: 5,
+                      shape: BoxShape.circle,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 16,
+                        child: SvgPicture.asset(
+                          'assets/images/favourite_icon.svg',
                         ),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    Container(
+                      height: 36,
+                      width: 36,
+                      decoration: BoxDecoration(
+                        color: ThemeClass.boxColor,
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: const Icon(
+                        Icons.remove,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Container(
+                      height: 36,
+                      width: 36,
+                      decoration: BoxDecoration(
+                        color: const Color(0xffF8F5F2),
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: const Center(
+                        child: Text('1'),
+                      ),
+                    ),
+                    Container(
+                      height: 36,
+                      width: 36,
+                      decoration: BoxDecoration(
+                        color: ThemeClass.brandPrimary,
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: const Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 36,
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      height: 96,
+                      width: 72,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(4),
+                        image: const DecorationImage(
+                          fit: BoxFit.fill,
+                          image: AssetImage(
+                            'assets/images/bbq.jpg',
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 15),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
                         Text(
-                          'Delivery discount',
+                          'Barbeque & vibes',
                           style: GoogleFonts.poppins(
-                            color: const Color(0xff7E7E7E),
-                            fontSize: 12,
+                            color: const Color(0xff3E4462),
+                            fontSize: 16,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              '3500',
+                              style: GoogleFonts.poppins(
+                                color: const Color(0xff3E4462),
+                                fontStyle: FontStyle.normal,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 11,
+                            ),
+                            Text(
+                              '4000',
+                              style: GoogleFonts.poppins(
+                                color: const Color(0xffCACACA),
+                                fontStyle: FontStyle.normal,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
+                                decoration: TextDecoration.lineThrough,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 9,
+                        ),
+                        Row(
+                          children: [
+                            CircleAvatar(
+                                radius: 8,
+                                backgroundColor: const Color(0xffEDA345),
+                                child: Center(
+                                  child: Text(
+                                    '%',
+                                    style: GoogleFonts.poppins(
+                                      color: Colors.white,
+                                      fontSize: 10,
+                                    ),
+                                  ),
+                                )),
+                            const SizedBox(
+                              width: 2,
+                            ),
+                            Text(
+                              'Delivery discount',
+                              style: GoogleFonts.poppins(
+                                color: const Color(0xff7E7E7E),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    const Expanded(
+                      child: SizedBox(),
+                    ),
+                    PhysicalModel(
+                      color: Colors.black,
+                      elevation: 5,
+                      shape: BoxShape.circle,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 16,
+                        child: SvgPicture.asset(
+                          'assets/images/favourite_icon.svg',
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    const Expanded(
+                      child: SizedBox(),
+                    ),
+                    Container(
+                      height: 36,
+                      width: 82,
+                      decoration: BoxDecoration(
+                        color: ThemeClass.brandPrimary,
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          const Icon(
+                            Icons.add,
+                            color: Colors.white,
+                            size: 15,
+                          ),
+                          Text(
+                            'Add',
+                            style: GoogleFonts.poppins(
+                              color: ThemeClass.containerColor,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+         Container(
+          decoration: BoxDecoration(
+            color: const Color(0xffFFFFFF).withOpacity(0.5),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'BBQ Saga',
+                      style: GoogleFonts.poppins(
+                        color: const Color(0xff3E4462),
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        SvgPicture.asset('assets/images/star_2.svg'),
+                        const SizedBox(width: 4),
+                        Text(
+                          '5.0',
+                          style: GoogleFonts.poppins(
+                            color: const Color(0xff3E4462),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        )
                       ],
                     ),
                   ],
                 ),
-                const Expanded(
-                  child: SizedBox(),
+                const SizedBox(
+                  height: 8,
                 ),
-                PhysicalModel(
-                  color: Colors.black,
-                  elevation: 5,
-                  shape: BoxShape.circle,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.white,
-                    radius: 16,
-                    child: SvgPicture.asset(
-                      'assets/images/favourite_icon.svg',
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Mowarid Hostel, Tanke',
+                      style: GoogleFonts.poppins(
+                        color: const Color(0xff7E7E7E),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
-                  ),
+                    Text(
+                      '1 Km',
+                      style: GoogleFonts.poppins(
+                        color: const Color(0xff7E7E7E),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                const Expanded(
-                  child: SizedBox(),
+                const SizedBox(
+                  height: 16,
                 ),
                 Container(
+                  width: double.infinity,
+                  height: 4,
+                  color: const Color(0xffEFEFF2),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      height: 96,
+                      width: 72,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(4),
+                        image: const DecorationImage(
+                          fit: BoxFit.fill,
+                          image: AssetImage(
+                            'assets/images/food.jpg',
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 15),
+                    Column(
+                      children: [
+                        Text(
+                          'BBQ Special',
+                          style: GoogleFonts.poppins(
+                            color: const Color(0xff3E4462),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              '2500',
+                              style: GoogleFonts.poppins(
+                                color: const Color(0xff3E4462),
+                                fontStyle: FontStyle.normal,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 11,
+                            ),
+                            Text(
+                              '3500',
+                              style: GoogleFonts.poppins(
+                                color: const Color(0xffCACACA),
+                                fontStyle: FontStyle.normal,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
+                                decoration: TextDecoration.lineThrough,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 9,
+                        ),
+                        Row(
+                          children: [
+                            CircleAvatar(
+                                radius: 8,
+                                backgroundColor: const Color(0xffEDA345),
+                                child: Center(
+                                  child: Text(
+                                    '%',
+                                    style: GoogleFonts.poppins(
+                                      color: Colors.white,
+                                      fontSize: 10,
+                                    ),
+                                  ),
+                                )),
+                            const SizedBox(
+                              width: 2,
+                            ),
+                            Text(
+                              'Free delivery',
+                              style: GoogleFonts.poppins(
+                                color: const Color(0xff7E7E7E),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    const Expanded(
+                      child: SizedBox(),
+                    ),
+                    PhysicalModel(
+                      color: Colors.black,
+                      elevation: 5,
+                      shape: BoxShape.circle,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 16,
+                        child: SvgPicture.asset(
+                          'assets/images/favourite_icon.svg',
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    Container(
+                      height: 36,
+                      width: 36,
+                      decoration: BoxDecoration(
+                        color: ThemeClass.boxColor,
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: const Icon(
+                        Icons.remove,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Container(
+                      height: 36,
+                      width: 36,
+                      decoration: BoxDecoration(
+                        color: const Color(0xffF8F5F2),
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: const Center(
+                        child: Text('1'),
+                      ),
+                    ),
+                    Container(
+                      height: 36,
+                      width: 36,
+                      decoration: BoxDecoration(
+                        color: ThemeClass.brandPrimary,
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: const Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
                   height: 36,
-                  width: 36,
-                  decoration: BoxDecoration(
-                    color: ThemeClass.brandPrimary,
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: const Icon(
-                    Icons.add,
-                    color: Colors.white,
-                  ),
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      height: 96,
+                      width: 72,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(4),
+                        image: const DecorationImage(
+                          fit: BoxFit.fill,
+                          image: AssetImage(
+                            'assets/images/bbq.jpg',
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 15),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Barbeque & vibes',
+                          style: GoogleFonts.poppins(
+                            color: const Color(0xff3E4462),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              '3500',
+                              style: GoogleFonts.poppins(
+                                color: const Color(0xff3E4462),
+                                fontStyle: FontStyle.normal,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 11,
+                            ),
+                            Text(
+                              '4000',
+                              style: GoogleFonts.poppins(
+                                color: const Color(0xffCACACA),
+                                fontStyle: FontStyle.normal,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
+                                decoration: TextDecoration.lineThrough,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 9,
+                        ),
+                        Row(
+                          children: [
+                            CircleAvatar(
+                                radius: 8,
+                                backgroundColor: const Color(0xffEDA345),
+                                child: Center(
+                                  child: Text(
+                                    '%',
+                                    style: GoogleFonts.poppins(
+                                      color: Colors.white,
+                                      fontSize: 10,
+                                    ),
+                                  ),
+                                )),
+                            const SizedBox(
+                              width: 2,
+                            ),
+                            Text(
+                              'Delivery discount',
+                              style: GoogleFonts.poppins(
+                                color: const Color(0xff7E7E7E),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    const Expanded(
+                      child: SizedBox(),
+                    ),
+                    PhysicalModel(
+                      color: Colors.black,
+                      elevation: 5,
+                      shape: BoxShape.circle,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 16,
+                        child: SvgPicture.asset(
+                          'assets/images/favourite_icon.svg',
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    const Expanded(
+                      child: SizedBox(),
+                    ),
+                    Container(
+                      height: 36,
+                      width: 82,
+                      decoration: BoxDecoration(
+                        color: ThemeClass.brandPrimary,
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          const Icon(
+                            Icons.add,
+                            color: Colors.white,
+                            size: 15,
+                          ),
+                          Text(
+                            'Add',
+                            style: GoogleFonts.poppins(
+                              color: ThemeClass.containerColor,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
-          ],
+          ),
         ),
-      ),
+      ],
     );
   }
 }

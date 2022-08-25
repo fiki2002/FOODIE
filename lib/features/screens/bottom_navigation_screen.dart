@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:food_app/features/screens/home_page.dart';
+import 'package:food_app/features/screens/promo.dart';
 
-import 'package:food_app/screens/home_page.dart';
-import 'package:food_app/screens/promo.dart';
+
 
 
 class BottomNavBar extends StatefulWidget {

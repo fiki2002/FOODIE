@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:food_app/screens/bottom_navigation_screen.dart';
+import 'package:food_app/features/screens/bottom_navigation_screen.dart';
 
 void main() => runApp(
       const MyApp(),
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'FOODIE',
       debugShowCheckedModeBanner: false,
-      home:  BottomNavBar(),
+      home: BottomNavBar(),
     );
   }
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../cores/constants/color.dart';
+import '../constants/color.dart';
 
 class MyContainer extends StatelessWidget {
   const MyContainer(

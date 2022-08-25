@@ -11,38 +11,33 @@ class MenuItem extends StatelessWidget {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: Stack(
-        children: [
-          Column(
-            children: [
-              Stack(
-                children: [
-                  Container(
-                    width: w,
-                    height: h * 0.3,
-                    decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/ham.jpg'),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    child: CircleAvatar(
-                      child: SvgPicture.asset('assets/images/back.svg'),
-                      backgroundColor: ThemeClass.containerColor,
-                    ),
-                  ),
-                   Positioned(
-                    child: CircleAvatar(
-                      child: SvgPicture.asset('assets/images/favourite_icom.svg'),
-                      backgroundColor: ThemeClass.containerColor,
-                    ),
-                  ),
-                ],
-              )
-            ],
-          ),
-        ],
+      body: SafeArea(
+        child: Stack(
+          children: [
+            Container(
+              width: w,
+              height: h * 0.3,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/food.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            Positioned(
+              child: CircleAvatar(
+                child: SvgPicture.asset('assets/images/back.svg'),
+                backgroundColor: ThemeClass.containerColor,
+              ),
+            ),
+            Positioned(
+              child: CircleAvatar(
+                child: SvgPicture.asset('assets/images/favourite_icon.svg'),
+                backgroundColor: ThemeClass.containerColor,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

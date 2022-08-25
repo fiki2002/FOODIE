@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:food_app/features/screens/menu_items.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
@@ -20,7 +21,7 @@ class _PromoPageState extends State<PromoPage> {
         foodName: 'BBQ Saga',
         imageUrl1: 'assets/images/food.jpg',
         imageUrl2: 'assets/images/bbq.jpg',
-        restuarantName: 'Item7 Go',
+        restuarantName: 'Item7 Go, Oke-Odo.',
         price1: '2500',
         price2: '3500',
         food1: 'BBQ Special',
@@ -135,7 +136,7 @@ class _PromoPageState extends State<PromoPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const PromoPage(),
+                          builder: (context) => const MenuItem(),
                         ),
                       );
                     },

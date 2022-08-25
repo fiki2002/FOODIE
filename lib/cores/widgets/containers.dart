@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../features/screens/menu_items.dart';
 import '../constants/color.dart';
 
+// ignore: must_be_immutable
 class MyContainer extends StatelessWidget {
-  const MyContainer(
+  MyContainer(
       {required this.foodName,
       required this.imageUrl1,
       required this.imageUrl2,
@@ -16,6 +18,7 @@ class MyContainer extends StatelessWidget {
       required this.food2,
       required this.secondFood1,
       required this.secondFood2,
+      this.bgImage = 'assets/images/item7.jpg',
       Key? key})
       : super(key: key);
   final String foodName;
@@ -28,7 +31,7 @@ class MyContainer extends StatelessWidget {
   final String food2;
   final String secondFood1;
   final String secondFood2;
-
+  String bgImage;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -380,11 +383,35 @@ class MyContainer extends StatelessWidget {
                         color: Colors.white,
                         size: 20,
                       ),
-                      Text(
-                        'Add',
-                        style: GoogleFonts.poppins(
-                          color: ThemeClass.containerColor,
-                          fontSize: 15,
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MenuItem(
+                                nextContainer: MyContainer(
+                                  food1: food1,
+                                  food2: food2,
+                                  foodName: foodName,
+                                  imageUrl1: imageUrl1,
+                                  imageUrl2: imageUrl2,
+                                  price1: price1,
+                                  price2: price2,
+                                  restuarantName: restuarantName,
+                                  secondFood1: secondFood1,
+                                  secondFood2: secondFood2,
+                                  bgImage: this.bgImage,
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          'Add',
+                          style: GoogleFonts.poppins(
+                            color: ThemeClass.containerColor,
+                            fontSize: 15,
+                          ),
                         ),
                       ),
                     ],

@@ -17,7 +17,7 @@ class _PromoPageState extends State<PromoPage> {
   @override
   Widget build(BuildContext context) {
     final List<MyContainer> _myContainers = [
-      const MyContainer(
+       MyContainer(
         foodName: 'BBQ Saga',
         imageUrl1: 'assets/images/food.jpg',
         imageUrl2: 'assets/images/bbq.jpg',
@@ -28,8 +28,9 @@ class _PromoPageState extends State<PromoPage> {
         food2: 'Barbeque & Vibes',
         secondFood1: '3500',
         secondFood2: '4000',
+        bgImage: 'assets/images/item7.jpg',
       ),
-      const MyContainer(
+       MyContainer(
         foodName: 'Ham Fiesta',
         imageUrl1: 'assets/images/ham.jpg',
         imageUrl2: 'assets/images/hamburger.jpg',
@@ -40,6 +41,7 @@ class _PromoPageState extends State<PromoPage> {
         food2: 'Ham Pirates',
         secondFood1: '2500',
         secondFood2: '3500',
+        bgImage: 'assets/images/thePlace.jpg',
       ),
     ];
     return Scaffold(
@@ -131,27 +133,17 @@ class _PromoPageState extends State<PromoPage> {
                 shrinkWrap: true,
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (_, index) {
-                  return InkWell(
-                    onTap:  () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const MenuItem(),
-                        ),
-                      );
-                    },
-                    child: MyContainer(
-                      food1: _myContainers[index].food1,
-                      food2: _myContainers[index].food2,
-                      foodName: _myContainers[index].foodName,
-                      imageUrl1: _myContainers[index].imageUrl1,
-                      imageUrl2: _myContainers[index].imageUrl2,
-                      price1: _myContainers[index].price1,
-                      price2: _myContainers[index].price2,
-                      restuarantName: _myContainers[index].restuarantName,
-                      secondFood1: _myContainers[index].secondFood1,
-                      secondFood2: _myContainers[index].secondFood2,
-                    ),
+                  return MyContainer(
+                    food1: _myContainers[index].food1,
+                    food2: _myContainers[index].food2,
+                    foodName: _myContainers[index].foodName,
+                    imageUrl1: _myContainers[index].imageUrl1,
+                    imageUrl2: _myContainers[index].imageUrl2,
+                    price1: _myContainers[index].price1,
+                    price2: _myContainers[index].price2,
+                    restuarantName: _myContainers[index].restuarantName,
+                    secondFood1: _myContainers[index].secondFood1,
+                    secondFood2: _myContainers[index].secondFood2,
                   );
                 },
                 separatorBuilder: (_, __) => const SizedBox(height: 10),

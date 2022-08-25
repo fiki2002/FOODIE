@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../cores/constants/color.dart';
+import '../../cores/widgets/containers.dart';
 
 class MenuItem extends StatelessWidget {
-  const MenuItem({Key? key}) : super(key: key);
+  final MyContainer nextContainer;
+  const MenuItem({
+    Key? key,
+    required this.nextContainer,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,30 +15,18 @@ class MenuItem extends StatelessWidget {
     double h = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SafeArea(
-        child: Stack(
+        child: Column(
           children: [
             Container(
-              width: w,
               height: h * 0.3,
-              decoration: const BoxDecoration(
+              width: w,
+              decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/food.jpg'),
-                  fit: BoxFit.cover,
+                  image: AssetImage(nextContainer.bgImage),
+                  fit: BoxFit.fill,
                 ),
               ),
-            ),
-            Positioned(
-              child: CircleAvatar(
-                child: SvgPicture.asset('assets/images/back.svg'),
-                backgroundColor: ThemeClass.containerColor,
-              ),
-            ),
-            Positioned(
-              child: CircleAvatar(
-                child: SvgPicture.asset('assets/images/favourite_icon.svg'),
-                backgroundColor: ThemeClass.containerColor,
-              ),
-            ),
+            )
           ],
         ),
       ),

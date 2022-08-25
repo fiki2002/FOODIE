@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:food_app/features/widgets.dart';
+
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../cores/widgets/containers.dart';
 
 class PromoPage extends StatefulWidget {
   const PromoPage({Key? key}) : super(key: key);
@@ -128,17 +130,27 @@ class _PromoPageState extends State<PromoPage> {
                 shrinkWrap: true,
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (_, index) {
-                  return MyContainer(
-                    food1: _myContainers[index].food1,
-                    food2: _myContainers[index].food2,
-                    foodName: _myContainers[index].foodName,
-                    imageUrl1: _myContainers[index].imageUrl1,
-                    imageUrl2: _myContainers[index].imageUrl2,
-                    price1: _myContainers[index].price1,
-                    price2: _myContainers[index].price2,
-                    restuarantName: _myContainers[index].restuarantName,
-                    secondFood1: _myContainers[index].secondFood1,
-                    secondFood2: _myContainers[index].secondFood2,
+                  return InkWell(
+                    onTap:  () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const PromoPage(),
+                        ),
+                      );
+                    },
+                    child: MyContainer(
+                      food1: _myContainers[index].food1,
+                      food2: _myContainers[index].food2,
+                      foodName: _myContainers[index].foodName,
+                      imageUrl1: _myContainers[index].imageUrl1,
+                      imageUrl2: _myContainers[index].imageUrl2,
+                      price1: _myContainers[index].price1,
+                      price2: _myContainers[index].price2,
+                      restuarantName: _myContainers[index].restuarantName,
+                      secondFood1: _myContainers[index].secondFood1,
+                      secondFood2: _myContainers[index].secondFood2,
+                    ),
                   );
                 },
                 separatorBuilder: (_, __) => const SizedBox(height: 10),

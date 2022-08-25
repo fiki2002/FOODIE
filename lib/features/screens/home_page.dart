@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:food_app/features/screens/promo.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:food_app/Screens/promo.dart';
 
-import '../cores/constants/color.dart';
+
+import '../../cores/constants/color.dart';
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);

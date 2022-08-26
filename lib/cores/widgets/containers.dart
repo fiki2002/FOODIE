@@ -368,53 +368,56 @@ class MyContainer extends StatelessWidget {
                 const Expanded(
                   child: SizedBox(),
                 ),
-                Container(
-                  height: 36,
-                  width: 82,
-                  decoration: BoxDecoration(
-                    color: ThemeClass.brandPrimary,
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      const Icon(
-                        Icons.add,
-                        color: Colors.white,
-                        size: 20,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => MenuItem(
-                                nextContainer: MyContainer(
-                                  food1: food1,
-                                  food2: food2,
-                                  foodName: foodName,
-                                  imageUrl1: imageUrl1,
-                                  imageUrl2: imageUrl2,
-                                  price1: price1,
-                                  price2: price2,
-                                  restuarantName: restuarantName,
-                                  secondFood1: secondFood1,
-                                  secondFood2: secondFood2,
-                                  bgImage: this.bgImage,
+                InkWell(
+                   onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MenuItem(
+                                  nextContainer: MyContainer(
+                                    food1: food1,
+                                    food2: food2,
+                                    foodName: foodName,
+                                    imageUrl1: imageUrl1,
+                                    imageUrl2: imageUrl2,
+                                    price1: price1,
+                                    price2: price2,
+                                    restuarantName: restuarantName,
+                                    secondFood1: secondFood1,
+                                    secondFood2: secondFood2,
+                                    bgImage: bgImage,
+                                  ),
                                 ),
                               ),
-                            ),
-                          );
-                        },
-                        child: Text(
-                          'Add',
-                          style: GoogleFonts.poppins(
-                            color: ThemeClass.containerColor,
-                            fontSize: 15,
-                          ),
+                            );
+                          },
+                  child: Container(
+                    height: 36,
+                    width: 82,
+                    decoration: BoxDecoration(
+                      color: ThemeClass.brandPrimary,
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        const Icon(
+                          Icons.add,
+                          color: Colors.white,
+                          size: 20,
                         ),
-                      ),
-                    ],
+                        
+                         
+                         Text(
+                            'Add',
+                            style: GoogleFonts.poppins(
+                              color: ThemeClass.containerColor,
+                              fontSize: 15,
+                            ),
+                          ),
+                        
+                      ],
+                    ),
                   ),
                 ),
               ],

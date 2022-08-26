@@ -34,7 +34,7 @@ class _PromoPageState extends State<PromoPage> {
         foodName: 'Ham Fiesta',
         imageUrl1: 'assets/images/ham.jpg',
         imageUrl2: 'assets/images/hamburger.jpg',
-        restuarantName: 'The Place',
+        restuarantName: 'The Place, Tanke',
         price1: '2000',
         price2: '1500',
         food1: 'Krabby Patty',
@@ -144,6 +144,7 @@ class _PromoPageState extends State<PromoPage> {
                     restuarantName: _myContainers[index].restuarantName,
                     secondFood1: _myContainers[index].secondFood1,
                     secondFood2: _myContainers[index].secondFood2,
+                    bgImage: _myContainers[index].bgImage,
                   );
                 },
                 separatorBuilder: (_, __) => const SizedBox(height: 10),

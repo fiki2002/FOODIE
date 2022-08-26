@@ -6,7 +6,8 @@ import '../../features/screens/menu_items.dart';
 import '../constants/color.dart';
 
 // ignore: must_be_immutable
-class MyContainer extends StatelessWidget {
+class MyContainer extends StatefulWidget {
+
   MyContainer(
       {required this.foodName,
       required this.imageUrl1,
@@ -32,6 +33,14 @@ class MyContainer extends StatelessWidget {
   final String secondFood1;
   final String secondFood2;
   String bgImage;
+
+  @override
+  State<MyContainer> createState() => _MyContainerState();
+}
+
+class _MyContainerState extends State<MyContainer> {
+  int count = 1;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -47,7 +56,7 @@ class MyContainer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  foodName,
+                  widget.foodName,
                   style: GoogleFonts.poppins(
                     color: const Color(0xff3E4462),
                     fontSize: 18,
@@ -77,7 +86,7 @@ class MyContainer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  restuarantName,
+                  widget.restuarantName,
                   style: GoogleFonts.poppins(
                     color: const Color(0xff7E7E7E),
                     fontSize: 14,
@@ -116,7 +125,7 @@ class MyContainer extends StatelessWidget {
                     image: DecorationImage(
                       fit: BoxFit.fill,
                       image: AssetImage(
-                        imageUrl1,
+                        widget.imageUrl1,
                       ),
                     ),
                   ),
@@ -125,7 +134,7 @@ class MyContainer extends StatelessWidget {
                 Column(
                   children: [
                     Text(
-                      food1,
+                      widget.food1,
                       style: GoogleFonts.poppins(
                         color: const Color(0xff3E4462),
                         fontSize: 16,
@@ -138,7 +147,7 @@ class MyContainer extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          price1,
+                          widget.price1,
                           style: GoogleFonts.poppins(
                             color: const Color(0xff3E4462),
                             fontStyle: FontStyle.normal,
@@ -150,7 +159,7 @@ class MyContainer extends StatelessWidget {
                           width: 11,
                         ),
                         Text(
-                          price2,
+                          widget.price2,
                           style: GoogleFonts.poppins(
                             color: const Color(0xffCACACA),
                             fontStyle: FontStyle.normal,
@@ -223,9 +232,18 @@ class MyContainer extends StatelessWidget {
                     color: ThemeClass.boxColor,
                     borderRadius: BorderRadius.circular(4),
                   ),
-                  child: const Icon(
-                    Icons.remove,
-                    color: Colors.white,
+                  child: IconButton(
+                    onPressed: () {
+                      setState(
+                        () {
+                          count--;
+                        },
+                      );
+                    },
+                    icon: const Icon(
+                      Icons.remove,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
                 Container(
@@ -235,8 +253,8 @@ class MyContainer extends StatelessWidget {
                     color: const Color(0xffF8F5F2),
                     borderRadius: BorderRadius.circular(4),
                   ),
-                  child: const Center(
-                    child: Text('1'),
+                  child: Center(
+                    child: Text('$count'),
                   ),
                 ),
                 Container(
@@ -246,9 +264,18 @@ class MyContainer extends StatelessWidget {
                     color: ThemeClass.brandPrimary,
                     borderRadius: BorderRadius.circular(4),
                   ),
-                  child: const Icon(
-                    Icons.add,
-                    color: Colors.white,
+                  child: IconButton(
+                    onPressed: () {
+                      setState(
+                        () {
+                          count++;
+                        },
+                      );
+                    },
+                    icon: const Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ],
@@ -267,7 +294,7 @@ class MyContainer extends StatelessWidget {
                     image: DecorationImage(
                       fit: BoxFit.fill,
                       image: AssetImage(
-                        imageUrl2,
+                        widget.imageUrl2,
                       ),
                     ),
                   ),
@@ -277,7 +304,7 @@ class MyContainer extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      food2,
+                      widget.food2,
                       style: GoogleFonts.poppins(
                         color: const Color(0xff3E4462),
                         fontSize: 16,
@@ -290,7 +317,7 @@ class MyContainer extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          secondFood1,
+                          widget.secondFood1,
                           style: GoogleFonts.poppins(
                             color: const Color(0xff3E4462),
                             fontStyle: FontStyle.normal,
@@ -302,7 +329,7 @@ class MyContainer extends StatelessWidget {
                           width: 11,
                         ),
                         Text(
-                          secondFood2,
+                          widget.secondFood2,
                           style: GoogleFonts.poppins(
                             color: const Color(0xffCACACA),
                             fontStyle: FontStyle.normal,
@@ -369,28 +396,28 @@ class MyContainer extends StatelessWidget {
                   child: SizedBox(),
                 ),
                 InkWell(
-                   onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => MenuItem(
-                                  nextContainer: MyContainer(
-                                    food1: food1,
-                                    food2: food2,
-                                    foodName: foodName,
-                                    imageUrl1: imageUrl1,
-                                    imageUrl2: imageUrl2,
-                                    price1: price1,
-                                    price2: price2,
-                                    restuarantName: restuarantName,
-                                    secondFood1: secondFood1,
-                                    secondFood2: secondFood2,
-                                    bgImage: bgImage,
-                                  ),
-                                ),
-                              ),
-                            );
-                          },
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MenuItem(
+                          nextContainer: MyContainer(
+                            food1: widget.food1,
+                            food2: widget.food2,
+                            foodName: widget.foodName,
+                            imageUrl1: widget.imageUrl1,
+                            imageUrl2: widget.imageUrl2,
+                            price1: widget.price1,
+                            price2: widget.price2,
+                            restuarantName: widget.restuarantName,
+                            secondFood1: widget.secondFood1,
+                            secondFood2: widget.secondFood2,
+                            bgImage: widget.bgImage,
+                          ),
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     height: 36,
                     width: 82,
@@ -406,16 +433,13 @@ class MyContainer extends StatelessWidget {
                           color: Colors.white,
                           size: 20,
                         ),
-                        
-                         
-                         Text(
-                            'Add',
-                            style: GoogleFonts.poppins(
-                              color: ThemeClass.containerColor,
-                              fontSize: 15,
-                            ),
+                        Text(
+                          'Add',
+                          style: GoogleFonts.poppins(
+                            color: ThemeClass.containerColor,
+                            fontSize: 15,
                           ),
-                        
+                        ),
                       ],
                     ),
                   ),
@@ -428,3 +452,5 @@ class MyContainer extends StatelessWidget {
     );
   }
 }
+
+void setState(Null Function() param0) {}

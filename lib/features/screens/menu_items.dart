@@ -64,42 +64,38 @@ class MenuItem extends StatelessWidget {
                     ),
                   ),
                 ),
-                Positioned(
-                  top: 100,
-                  right: 10,
-                  left: 10,
-                  child: Container(
-                    width: w,
-                    height: 168,
-                    margin: const EdgeInsets.all(20),
-                    decoration: BoxDecoration(
+              
+              ],
+            ),
+              Container(
+              width: w,
+              height: 168,
+              margin: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: ThemeClass.containerColor,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    'nextContainer.food1',
+                    style: GoogleFonts.poppins(
                       color: ThemeClass.containerColor,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          'nextContainer.food1',
-                          style: GoogleFonts.poppins(
-                            color: ThemeClass.containerColor,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        Text(
-                          nextContainer.restuarantName,
-                          style: GoogleFonts.poppins(
-                            color: ThemeClass.containerColor,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
-                ),
-              ],
+                  Text(
+                    nextContainer.restuarantName,
+                    style: GoogleFonts.poppins(
+                      color: ThemeClass.containerColor,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

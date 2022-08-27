@@ -7,7 +7,6 @@ import '../constants/color.dart';
 
 // ignore: must_be_immutable
 class MyContainer extends StatefulWidget {
-
   MyContainer(
       {required this.foodName,
       required this.imageUrl1,
@@ -225,22 +224,22 @@ class _MyContainerState extends State<MyContainer> {
                 const SizedBox(
                   width: 5,
                 ),
-                Container(
-                  height: 36,
-                  width: 36,
-                  decoration: BoxDecoration(
-                    color: ThemeClass.boxColor,
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: IconButton(
-                    onPressed: () {
-                      setState(
-                        () {
-                          count--;
-                        },
-                      );
-                    },
-                    icon: const Icon(
+                GestureDetector(
+                  onTap: () {
+                    setState(
+                      () {
+                        count--;
+                      },
+                    );
+                  },
+                  child: Container(
+                    height: 36,
+                    width: 36,
+                    decoration: BoxDecoration(
+                      color: ThemeClass.boxColor,
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: const Icon(
                       Icons.remove,
                       color: Colors.white,
                     ),
@@ -257,22 +256,25 @@ class _MyContainerState extends State<MyContainer> {
                     child: Text('$count'),
                   ),
                 ),
-                Container(
-                  height: 36,
-                  width: 36,
-                  decoration: BoxDecoration(
-                    color: ThemeClass.brandPrimary,
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: IconButton(
-                    onPressed: () {
-                      setState(
-                        () {
-                          count++;
-                        },
-                      );
-                    },
-                    icon: const Icon(
+                GestureDetector(
+                  onTap: () {
+                    print('setState called');
+                    setState(
+                      () {
+                        count++;
+                      },
+                    );
+                                        print('setState finished');
+
+                  },
+                  child: Container(
+                    height: 36,
+                    width: 36,
+                    decoration: BoxDecoration(
+                      color: ThemeClass.brandPrimary,
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: const Icon(
                       Icons.add,
                       color: Colors.white,
                     ),

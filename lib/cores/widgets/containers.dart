@@ -258,13 +258,11 @@ class _MyContainerState extends State<MyContainer> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    print('setState called');
                     setState(
                       () {
                         count++;
                       },
                     );
-                                        print('setState finished');
 
                   },
                   child: Container(
@@ -455,4 +453,4 @@ class _MyContainerState extends State<MyContainer> {
   }
 }
 
-void setState(Null Function() param0) {}
+

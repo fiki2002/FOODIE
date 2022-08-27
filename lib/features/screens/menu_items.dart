@@ -17,7 +17,7 @@ class MenuItem extends StatefulWidget {
 }
 
 class _MenuItemState extends State<MenuItem> {
-  int count = 0;
+  int count = 1;
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -225,346 +225,353 @@ class _MenuItemState extends State<MenuItem> {
                   const SizedBox(
                     height: 20,
                   ),
-                  ListView(
-                    shrinkWrap: true,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            widget.nextContainer.foodName,
-                            style: GoogleFonts.poppins(
-                              color: const Color(0xff3E4462),
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              SvgPicture.asset('assets/images/star_2.svg'),
-                              const SizedBox(width: 4),
-                              Text(
-                                '5.0',
-                                style: GoogleFonts.poppins(
-                                  color: const Color(0xff3E4462),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 8,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            widget.nextContainer.restuarantName,
-                            style: GoogleFonts.poppins(
-                              color: const Color(0xff7E7E7E),
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                          Text(
-                            '1 Km',
-                            style: GoogleFonts.poppins(
-                              color: const Color(0xff7E7E7E),
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 16,
-                      ),
-                      Container(
-                        width: double.infinity,
-                        height: 4,
-                        color: const Color(0xffEFEFF2),
-                      ),
-                      const SizedBox(
-                        height: 16,
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            height: 96,
-                            width: 72,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(4),
-                              image: DecorationImage(
-                                fit: BoxFit.fill,
-                                image: AssetImage(
-                                  widget.nextContainer.imageUrl1,
-                                ),
+                  SizedBox(
+                    width: w,
+                    height: h * 0.4,
+                    child: ListView(
+                      shrinkWrap: true,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              widget.nextContainer.foodName,
+                              style: GoogleFonts.poppins(
+                                color: const Color(0xff3E4462),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
-                          ),
-                          const SizedBox(width: 15),
-                          Column(
-                            children: [
-                              Text(
-                                widget.nextContainer.food1,
-                                style: GoogleFonts.poppins(
-                                  color: const Color(0xff3E4462),
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w400,
+                            Row(
+                              children: [
+                                SvgPicture.asset('assets/images/star_2.svg'),
+                                const SizedBox(width: 4),
+                                Text(
+                                  '5.0',
+                                  style: GoogleFonts.poppins(
+                                    color: const Color(0xff3E4462),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              widget.nextContainer.restuarantName,
+                              style: GoogleFonts.poppins(
+                                color: const Color(0xff7E7E7E),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            Text(
+                              '1 Km',
+                              style: GoogleFonts.poppins(
+                                color: const Color(0xff7E7E7E),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        Container(
+                          width: double.infinity,
+                          height: 4,
+                          color: const Color(0xffEFEFF2),
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              height: 96,
+                              width: 72,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(4),
+                                image: DecorationImage(
+                                  fit: BoxFit.fill,
+                                  image: AssetImage(
+                                    widget.nextContainer.imageUrl1,
+                                  ),
                                 ),
                               ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              Row(
-                                children: [
-                                  Text(
-                                    widget.nextContainer.price1,
-                                    style: GoogleFonts.poppins(
-                                      color: const Color(0xff3E4462),
-                                      fontStyle: FontStyle.normal,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w500,
+                            ),
+                            const SizedBox(width: 15),
+                            Column(
+                              children: [
+                                Text(
+                                  widget.nextContainer.food1,
+                                  style: GoogleFonts.poppins(
+                                    color: const Color(0xff3E4462),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 8,
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      widget.nextContainer.price1,
+                                      style: GoogleFonts.poppins(
+                                        color: const Color(0xff3E4462),
+                                        fontStyle: FontStyle.normal,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w500,
+                                      ),
                                     ),
-                                  ),
-                                  const SizedBox(
-                                    width: 11,
-                                  ),
-                                  Text(
-                                    widget.nextContainer.price2,
-                                    style: GoogleFonts.poppins(
-                                      color: const Color(0xffCACACA),
-                                      fontStyle: FontStyle.normal,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w400,
-                                      decoration: TextDecoration.lineThrough,
+                                    const SizedBox(
+                                      width: 11,
                                     ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 9,
-                              ),
-                              Row(
-                                children: [
-                                  CircleAvatar(
-                                      radius: 8,
-                                      backgroundColor:
-                                          const Color(0xffEDA345),
-                                      child: Center(
-                                        child: Text(
-                                          '%',
-                                          style: GoogleFonts.poppins(
-                                            color: Colors.white,
-                                            fontSize: 10,
+                                    Text(
+                                      widget.nextContainer.price2,
+                                      style: GoogleFonts.poppins(
+                                        color: const Color(0xffCACACA),
+                                        fontStyle: FontStyle.normal,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w400,
+                                        decoration: TextDecoration.lineThrough,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 9,
+                                ),
+                                Row(
+                                  children: [
+                                    CircleAvatar(
+                                        radius: 8,
+                                        backgroundColor:
+                                            const Color(0xffEDA345),
+                                        child: Center(
+                                          child: Text(
+                                            '%',
+                                            style: GoogleFonts.poppins(
+                                              color: Colors.white,
+                                              fontSize: 10,
+                                            ),
                                           ),
-                                        ),
-                                      )),
-                                  const SizedBox(
-                                    width: 2,
-                                  ),
-                                  Text(
-                                    'Free delivery',
-                                    style: GoogleFonts.poppins(
-                                      color: const Color(0xff7E7E7E),
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400,
+                                        )),
+                                    const SizedBox(
+                                      width: 2,
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          const Expanded(
-                            child: SizedBox(),
-                          ),
-                          PhysicalModel(
-                            color: Colors.black,
-                            elevation: 5,
-                            shape: BoxShape.circle,
-                            child: CircleAvatar(
-                              backgroundColor: Colors.white,
-                              radius: 16,
-                              child: SvgPicture.asset(
-                                'assets/images/favourite_icon.svg',
+                                    Text(
+                                      'Free delivery',
+                                      style: GoogleFonts.poppins(
+                                        color: const Color(0xff7E7E7E),
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            const Expanded(
+                              child: SizedBox(),
+                            ),
+                            PhysicalModel(
+                              color: Colors.black,
+                              elevation: 5,
+                              shape: BoxShape.circle,
+                              child: CircleAvatar(
+                                backgroundColor: Colors.white,
+                                radius: 16,
+                                child: SvgPicture.asset(
+                                  'assets/images/favourite_icon.svg',
+                                ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              setState(
-                                () {
-                                  count--;
-                                },
-                              );
-                            },
-                            child: Container(
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                setState(
+                                  () {
+                                    count == 1 ? null : count--;
+                                  },
+                                );
+                              },
+                              child: Container(
+                                height: 36,
+                                width: 36,
+                                decoration: BoxDecoration(
+                                  color: ThemeClass.boxColor,
+                                  borderRadius: BorderRadius.circular(4),
+                                ),
+                                child: const Icon(
+                                  Icons.remove,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                            Container(
                               height: 36,
                               width: 36,
                               decoration: BoxDecoration(
-                                color: ThemeClass.boxColor,
+                                color: const Color(0xffF8F5F2),
                                 borderRadius: BorderRadius.circular(4),
                               ),
-                              child: const Icon(
-                                Icons.remove,
-                                color: Colors.white,
+                              child: Center(
+                                child: Text('$count'),
                               ),
                             ),
-                          ),
-                          Container(
-                            height: 36,
-                            width: 36,
-                            decoration: BoxDecoration(
-                              color: const Color(0xffF8F5F2),
-                              borderRadius: BorderRadius.circular(4),
+                            GestureDetector(
+                              onTap: () {
+                                setState(
+                                  () {
+                                    count++;
+                                  },
+                                );
+                              },
+                              child: Container(
+                                height: 36,
+                                width: 36,
+                                decoration: BoxDecoration(
+                                  color: ThemeClass.brandPrimary,
+                                  borderRadius: BorderRadius.circular(4),
+                                ),
+                                child: const Icon(
+                                  Icons.add,
+                                  color: Colors.white,
+                                ),
+                              ),
                             ),
-                            child: Center(
-                              child: Text('$count'),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              setState(
-                                () {
-                                  count++;
-                                },
-                              );
-                            },
-                            child: Container(
-                              height: 36,
-                              width: 36,
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 36,
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              height: 96,
+                              width: 72,
                               decoration: BoxDecoration(
-                                color: ThemeClass.brandPrimary,
                                 borderRadius: BorderRadius.circular(4),
-                              ),
-                              child: const Icon(
-                                Icons.add,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            height: 96,
-                            width: 72,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(4),
-                              image: DecorationImage(
-                                fit: BoxFit.fill,
-                                image: AssetImage(
-                                  widget.nextContainer.imageUrl2,
+                                image: DecorationImage(
+                                  fit: BoxFit.fill,
+                                  image: AssetImage(
+                                    widget.nextContainer.imageUrl2,
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                          const SizedBox(width: 15),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                widget.nextContainer.food2,
-                                style: GoogleFonts.poppins(
-                                  color: const Color(0xff3E4462),
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w400,
+                            const SizedBox(width: 15),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  widget.nextContainer.food2,
+                                  style: GoogleFonts.poppins(
+                                    color: const Color(0xff3E4462),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                  ),
                                 ),
-                              ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              Row(
-                                children: [
-                                  Text(
-                                    widget.nextContainer.secondFood1,
-                                    style: GoogleFonts.poppins(
-                                      color: const Color(0xff3E4462),
-                                      fontStyle: FontStyle.normal,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w500,
+                                const SizedBox(
+                                  height: 8,
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      widget.nextContainer.secondFood1,
+                                      style: GoogleFonts.poppins(
+                                        color: const Color(0xff3E4462),
+                                        fontStyle: FontStyle.normal,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w500,
+                                      ),
                                     ),
-                                  ),
-                                  const SizedBox(
-                                    width: 11,
-                                  ),
-                                  Text(
-                                    widget.nextContainer.secondFood2,
-                                    style: GoogleFonts.poppins(
-                                      color: const Color(0xffCACACA),
-                                      fontStyle: FontStyle.normal,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w400,
-                                      decoration: TextDecoration.lineThrough,
+                                    const SizedBox(
+                                      width: 11,
                                     ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 9,
-                              ),
-                              Row(
-                                children: [
-                                  CircleAvatar(
-                                      radius: 8,
-                                      backgroundColor:
-                                          const Color(0xffEDA345),
-                                      child: Center(
-                                        child: Text(
-                                          '%',
-                                          style: GoogleFonts.poppins(
-                                            color: Colors.white,
-                                            fontSize: 10,
+                                    Text(
+                                      widget.nextContainer.secondFood2,
+                                      style: GoogleFonts.poppins(
+                                        color: const Color(0xffCACACA),
+                                        fontStyle: FontStyle.normal,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w400,
+                                        decoration: TextDecoration.lineThrough,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 9,
+                                ),
+                                Row(
+                                  children: [
+                                    CircleAvatar(
+                                        radius: 8,
+                                        backgroundColor:
+                                            const Color(0xffEDA345),
+                                        child: Center(
+                                          child: Text(
+                                            '%',
+                                            style: GoogleFonts.poppins(
+                                              color: Colors.white,
+                                              fontSize: 10,
+                                            ),
                                           ),
-                                        ),
-                                      )),
-                                  const SizedBox(
-                                    width: 2,
-                                  ),
-                                  Text(
-                                    'Delivery discount',
-                                    style: GoogleFonts.poppins(
-                                      color: const Color(0xff7E7E7E),
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400,
+                                        )),
+                                    const SizedBox(
+                                      width: 2,
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          const Expanded(
-                            child: SizedBox(),
-                          ),
-                          PhysicalModel(
-                            color: Colors.black,
-                            elevation: 5,
-                            shape: BoxShape.circle,
-                            child: CircleAvatar(
-                              backgroundColor: Colors.white,
-                              radius: 16,
-                              child: SvgPicture.asset(
-                                'assets/images/favourite_icon.svg',
+                                    Text(
+                                      'Delivery discount',
+                                      style: GoogleFonts.poppins(
+                                        color: const Color(0xff7E7E7E),
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            const Expanded(
+                              child: SizedBox(),
+                            ),
+                            PhysicalModel(
+                              color: Colors.black,
+                              elevation: 5,
+                              shape: BoxShape.circle,
+                              child: CircleAvatar(
+                                backgroundColor: Colors.white,
+                                radius: 16,
+                                child: SvgPicture.asset(
+                                  'assets/images/favourite_icon.svg',
+                                ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),

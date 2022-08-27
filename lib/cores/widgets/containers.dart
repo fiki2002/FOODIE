@@ -228,7 +228,7 @@ class _MyContainerState extends State<MyContainer> {
                   onTap: () {
                     setState(
                       () {
-                        count--;
+                    count == 1 ? null  : count--;
                       },
                     );
                   },

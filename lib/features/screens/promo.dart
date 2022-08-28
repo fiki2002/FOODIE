@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:food_app/features/screens/menu_items.dart';
-
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../cores/widgets/containers.dart';
@@ -17,7 +15,7 @@ class _PromoPageState extends State<PromoPage> {
   @override
   Widget build(BuildContext context) {
     final List<MyContainer> _myContainers = [
-       MyContainer(
+      MyContainer(
         foodName: 'BBQ Saga',
         imageUrl1: 'assets/images/food.jpg',
         imageUrl2: 'assets/images/bbq.jpg',
@@ -30,7 +28,7 @@ class _PromoPageState extends State<PromoPage> {
         secondFood2: '4000',
         bgImage: 'assets/images/item7.jpg',
       ),
-       MyContainer(
+      MyContainer(
         foodName: 'Ham Fiesta',
         imageUrl1: 'assets/images/ham.jpg',
         imageUrl2: 'assets/images/hamburger.jpg',

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:food_app/features/screens/checkout_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../cores/constants/color.dart';
@@ -130,7 +131,8 @@ class _MenuItemState extends State<MenuItem> {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      SvgPicture.asset('assets/images/mile.svg'),
+                                      SvgPicture.asset(
+                                          'assets/images/mile.svg'),
                                       const SizedBox(width: 2),
                                       Text(
                                         '1Km',
@@ -141,7 +143,8 @@ class _MenuItemState extends State<MenuItem> {
                                         ),
                                       ),
                                       const SizedBox(width: 5),
-                                      SvgPicture.asset('assets/images/star_2.svg'),
+                                      SvgPicture.asset(
+                                          'assets/images/star_2.svg'),
                                       const SizedBox(width: 4),
                                       Text(
                                         '5.0',
@@ -152,7 +155,8 @@ class _MenuItemState extends State<MenuItem> {
                                         ),
                                       ),
                                       const SizedBox(width: 5),
-                                      SvgPicture.asset('assets/images/check.svg'),
+                                      SvgPicture.asset(
+                                          'assets/images/check.svg'),
                                       const SizedBox(width: 4),
                                       Text(
                                         'Verified',
@@ -583,47 +587,57 @@ class _MenuItemState extends State<MenuItem> {
                 ),
               ],
             ),
-               Align(
+            Align(
               alignment: Alignment.bottomCenter,
-              child: Container(
-                width: w,
-                decoration: const BoxDecoration(
-                  color: ThemeClass.containerColor,
-                ),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CheckOutScreen(),
+                    ),
+                  );
+                },
                 child: Container(
-                  margin: const EdgeInsets.all(10),
-                  padding: const EdgeInsets.all(5),
+                  width: w,
                   decoration: const BoxDecoration(
-                    color: ThemeClass.brandPrimary,
+                    color: ThemeClass.containerColor,
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        '$count item',
-                        style: GoogleFonts.poppins(
-                          color: ThemeClass.containerColor,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
+                  child: Container(
+                    margin: const EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(5),
+                    decoration: const BoxDecoration(
+                      color: ThemeClass.brandPrimary,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '$count item',
+                          style: GoogleFonts.poppins(
+                            color: ThemeClass.containerColor,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
-                      ),
-                      Text(
-                        'Checkout',
-                        style: GoogleFonts.poppins(
-                          color: ThemeClass.containerColor,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
+                        Text(
+                          'Checkout',
+                          style: GoogleFonts.poppins(
+                            color: ThemeClass.containerColor,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      Text(
-                        '$count X ' + widget.nextContainer.price1,
-                        style: GoogleFonts.poppins(
-                          color: ThemeClass.containerColor,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
+                        Text(
+                          '$count X ' + widget.nextContainer.price1,
+                          style: GoogleFonts.poppins(
+                            color: ThemeClass.containerColor,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),

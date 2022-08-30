@@ -594,7 +594,21 @@ class _MenuItemState extends State<MenuItem> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const CheckOutScreen(),
+                      builder: (context) => CheckOutScreen(
+                        checkOutScreen: MyContainer(
+                          food1: widget.nextContainer.food1,
+                          food2: widget.nextContainer.food2,
+                          foodName: widget.nextContainer.foodName,
+                          imageUrl1: widget.nextContainer.imageUrl1,
+                          imageUrl2: widget.nextContainer.imageUrl2,
+                          price1: widget.nextContainer.price1,
+                          price2: widget.nextContainer.price2,
+                          restuarantName: widget.nextContainer.restuarantName,
+                          secondFood1: widget.nextContainer.secondFood1,
+                          secondFood2: widget.nextContainer.secondFood2,
+                          bgImage: widget.nextContainer.bgImage,
+                        ),
+                      ),
                     ),
                   );
                 },

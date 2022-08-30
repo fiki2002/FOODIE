@@ -3,15 +3,22 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../cores/constants/color.dart';
+import '../../cores/widgets/containers.dart';
 
 class CheckOutScreen extends StatefulWidget {
-  const CheckOutScreen({Key? key}) : super(key: key);
+  final MyContainer checkOutScreen;
+  const CheckOutScreen({
+    Key? key,
+    required this.checkOutScreen,
+  }) : super(key: key);
 
   @override
   State<CheckOutScreen> createState() => _CheckOutScreenState();
 }
 
 class _CheckOutScreenState extends State<CheckOutScreen> {
+  var _selectedRadio;
+
   bool _value = false;
   @override
   Widget build(BuildContext context) {
@@ -119,19 +126,70 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                 ],
               ),
             ),
-            Container(
-              margin: const EdgeInsets.symmetric(
-                horizontal: 10,
-              ),
-              padding: const EdgeInsets.symmetric(
-                horizontal: 9,
-                vertical: 10,
-              ),
-              decoration: BoxDecoration(
-                color: ThemeClass.containerColor,
-                borderRadius: BorderRadius.circular(5),
-              ),
+            const SizedBox(
+              height: 16,
             ),
+            Container(
+                margin: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                ),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 9,
+                  vertical: 10,
+                ),
+                decoration: BoxDecoration(
+                  color: ThemeClass.containerColor,
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Column(
+                          children: [
+                            Text(
+                              'Deliver to',
+                              style: GoogleFonts.poppins(
+                                color: ThemeClass.primaryColor,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            Text(
+                              widget.checkOutScreen.restuarantName,
+                              style: GoogleFonts.poppins(
+                                color: ThemeClass.secondaryColor,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const Expanded(
+                          child: SizedBox(),
+                        ),
+                        Radio<String>(
+                          value: 'PickUp',
+                          groupValue: _selectedRadio,
+                          onChanged: (v) {
+                            setState(
+                              () {
+                                _selectedRadio = v!;
+                              },
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 9,
+                        vertical: 10,
+                      ),
+                      decoration: const BoxDecoration(),
+                    )
+                  ],
+                )),
           ],
         ),
       ),

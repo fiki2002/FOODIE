@@ -39,31 +39,36 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
               decoration: const BoxDecoration(
                 color: ThemeClass.containerColor,
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: SvgPicture.asset(
-                      'assets/images/back.svg',
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  top: 25,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: SvgPicture.asset(
+                        'assets/images/back.svg',
+                        width: 20,
+                        height: 20,
+                      ),
+                    ),
+                    Text(
+                      'Checkout',
+                      style: GoogleFonts.poppins(
+                        color: ThemeClass.primaryColor,
+                        fontSize: 24,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    const SizedBox(
                       width: 20,
-                      height: 20,
                     ),
-                  ),
-                  Text(
-                    'Checkout',
-                    style: GoogleFonts.poppins(
-                      color: ThemeClass.primaryColor,
-                      fontSize: 24,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             const SizedBox(
@@ -171,7 +176,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                         child: SizedBox(),
                       ),
                       Transform.scale(
-                        scale: 2,
+                        scale: 1.5,
                         child: Radio<String>(
                           value: 'PickUp',
                           fillColor: MaterialStateColor.resolveWith(
@@ -188,7 +193,9 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 5),
+                  const SizedBox(
+                    height: 16,
+                  ),
                   Container(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 10,
@@ -213,6 +220,57 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                         ),
                       ],
                     ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(
+                horizontal: 10,
+              ),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 9,
+                vertical: 10,
+              ),
+              decoration: BoxDecoration(
+                color: ThemeClass.containerColor,
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        'My Bucket',
+                        style: GoogleFonts.poppins(
+                          color: ThemeClass.primaryColor,
+                          fontSize: 22,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      const Expanded(
+                        child: SizedBox(),
+                      ),
+                      const Icon(
+                        Icons.add,
+                        color: ThemeClass.brandPrimary,
+                        size: 20,
+                      ),
+                      Text(
+                        'Add items',
+                        style: GoogleFonts.poppins(
+                          color: ThemeClass.brandPrimary,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 24,
                   ),
                 ],
               ),

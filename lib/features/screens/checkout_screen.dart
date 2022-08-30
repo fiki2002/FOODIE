@@ -73,106 +73,46 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 16,
             ),
-            SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              child: Column(
-                children: [
-                  Container(
-                    margin: const EdgeInsets.symmetric(
-                      horizontal: 15,
-                    ),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 9,
-                      vertical: 10,
-                    ),
-                    decoration: BoxDecoration(
-                      color: ThemeClass.containerColor,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Row(
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Keep social distancing',
-                              style: GoogleFonts.poppins(
-                                color: ThemeClass.primaryColor,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            Text(
-                              'Leave your order on the doorstep',
-                              style: GoogleFonts.poppins(
-                                color: ThemeClass.secondaryColor,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ],
+            Expanded(
+              child: SizedBox(
+                height: h * 0.8,
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Column(
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.symmetric(
+                          horizontal: 15,
                         ),
-                        const Expanded(
-                          child: SizedBox(),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 9,
+                          vertical: 10,
                         ),
-                        Transform.scale(
-                          scale: 1,
-                          child: Switch(
-                            value: _value,
-                            onChanged: (value) {
-                              setState(
-                                () {
-                                  _value = value;
-                                },
-                              );
-                            },
-                            activeColor: ThemeClass.brandPrimary,
-                            activeTrackColor: const Color(0xffEFEFF2),
-                          ),
+                        decoration: BoxDecoration(
+                          color: ThemeClass.containerColor,
+                          borderRadius: BorderRadius.circular(8),
                         ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(
-                      horizontal: 15,
-                    ),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 9,
-                      vertical: 10,
-                    ),
-                    decoration: BoxDecoration(
-                      color: ThemeClass.containerColor,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Row(
+                        child: Row(
                           children: [
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Deliver to:',
+                                  'Keep social distancing',
                                   style: GoogleFonts.poppins(
                                     color: ThemeClass.primaryColor,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
                                   ),
                                 ),
                                 Text(
-                                  widget.checkOutScreen.restuarantName,
+                                  'Leave your order on the doorstep',
                                   style: GoogleFonts.poppins(
                                     color: ThemeClass.secondaryColor,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
                                   ),
                                 ),
                               ],
@@ -181,356 +121,445 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                               child: SizedBox(),
                             ),
                             Transform.scale(
-                              scale: 1.5,
-                              child: Radio<String>(
-                                value: 'PickUp',
-                                fillColor: MaterialStateColor.resolveWith(
-                                    (states) => ThemeClass.brandPrimary),
-                                groupValue: _selectedRadio,
-                                onChanged: (v) {
+                              scale: 1,
+                              child: Switch(
+                                value: _value,
+                                onChanged: (value) {
                                   setState(
                                     () {
-                                      _selectedRadio = v;
+                                      _value = value;
                                     },
                                   );
                                 },
+                                activeColor: ThemeClass.brandPrimary,
+                                activeTrackColor: const Color(0xffEFEFF2),
                               ),
                             ),
                           ],
                         ),
-                        const SizedBox(
-                          height: 16,
+                      ),
+                      const SizedBox(
+                        height: 16,
+                      ),
+                      Container(
+                        margin: const EdgeInsets.symmetric(
+                          horizontal: 15,
                         ),
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 10,
-                            vertical: 9,
-                          ),
-                          decoration: const BoxDecoration(
-                            color: Color(0xffF2F5F8),
-                          ),
-                          child: Row(
-                            children: [
-                              SvgPicture.asset('assets/images/note.svg'),
-                              const SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                'Add a note of delivery address',
-                                style: GoogleFonts.poppins(
-                                  color: ThemeClass.secondaryColor,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 14,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 9,
+                          vertical: 10,
+                        ),
+                        decoration: BoxDecoration(
+                          color: ThemeClass.containerColor,
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Deliver to:',
+                                      style: GoogleFonts.poppins(
+                                        color: ThemeClass.primaryColor,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    Text(
+                                      widget.checkOutScreen.restuarantName,
+                                      style: GoogleFonts.poppins(
+                                        color: ThemeClass.secondaryColor,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                  ],
                                 ),
+                                const Expanded(
+                                  child: SizedBox(),
+                                ),
+                                Transform.scale(
+                                  scale: 1.5,
+                                  child: Radio<String>(
+                                    value: 'PickUp',
+                                    fillColor: MaterialStateColor.resolveWith(
+                                        (states) => ThemeClass.brandPrimary),
+                                    groupValue: _selectedRadio,
+                                    onChanged: (v) {
+                                      setState(
+                                        () {
+                                          _selectedRadio = v;
+                                        },
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 16,
+                            ),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 10,
+                                vertical: 9,
                               ),
-                            ],
-                          ),
+                              decoration: const BoxDecoration(
+                                color: Color(0xffF2F5F8),
+                              ),
+                              child: Row(
+                                children: [
+                                  SvgPicture.asset('assets/images/note.svg'),
+                                  const SizedBox(
+                                    width: 5,
+                                  ),
+                                  Text(
+                                    'Add a note of delivery address',
+                                    style: GoogleFonts.poppins(
+                                      color: ThemeClass.secondaryColor,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(
-                      horizontal: 15,
-                    ),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 9,
-                      vertical: 10,
-                    ),
-                    decoration: BoxDecoration(
-                      color: ThemeClass.containerColor,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Column(
-                      children: [
-                        Row(
+                      ),
+                      const SizedBox(
+                        height: 16,
+                      ),
+                      Container(
+                        margin: const EdgeInsets.symmetric(
+                          horizontal: 15,
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 9,
+                          vertical: 10,
+                        ),
+                        decoration: BoxDecoration(
+                          color: ThemeClass.containerColor,
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  'My Bucket',
+                                  style: GoogleFonts.poppins(
+                                    color: ThemeClass.primaryColor,
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                const Expanded(
+                                  child: SizedBox(),
+                                ),
+                                const Icon(
+                                  Icons.add,
+                                  color: ThemeClass.brandPrimary,
+                                  size: 20,
+                                ),
+                                const SizedBox(
+                                  height: 3,
+                                ),
+                                Text(
+                                  'Add items',
+                                  style: GoogleFonts.poppins(
+                                    color: ThemeClass.brandPrimary,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 24,
+                            ),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  height: 96,
+                                  width: 72,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(4),
+                                    image: DecorationImage(
+                                      fit: BoxFit.fill,
+                                      image: AssetImage(
+                                        widget.checkOutScreen.imageUrl1,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(width: 15),
+                                Column(
+                                  children: [
+                                    Text(
+                                      widget.checkOutScreen.food1,
+                                      style: GoogleFonts.poppins(
+                                        color: const Color(0xff3E4462),
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 8,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          widget.checkOutScreen.price1,
+                                          style: GoogleFonts.poppins(
+                                            color: const Color(0xff3E4462),
+                                            fontStyle: FontStyle.normal,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          width: 11,
+                                        ),
+                                        Text(
+                                          widget.checkOutScreen.price2,
+                                          style: GoogleFonts.poppins(
+                                            color: const Color(0xffCACACA),
+                                            fontStyle: FontStyle.normal,
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w400,
+                                            decoration:
+                                                TextDecoration.lineThrough,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 9,
+                                    ),
+                                    Row(
+                                      children: [
+                                        CircleAvatar(
+                                            radius: 8,
+                                            backgroundColor:
+                                                const Color(0xffEDA345),
+                                            child: Center(
+                                              child: Text(
+                                                '%',
+                                                style: GoogleFonts.poppins(
+                                                  color: Colors.white,
+                                                  fontSize: 10,
+                                                ),
+                                              ),
+                                            )),
+                                        const SizedBox(
+                                          width: 2,
+                                        ),
+                                        Text(
+                                          'Free delivery',
+                                          style: GoogleFonts.poppins(
+                                            color: const Color(0xff7E7E7E),
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                const Expanded(
+                                  child: SizedBox(),
+                                ),
+                                PhysicalModel(
+                                  color: Colors.black,
+                                  elevation: 5,
+                                  shape: BoxShape.circle,
+                                  child: CircleAvatar(
+                                    backgroundColor: Colors.white,
+                                    radius: 16,
+                                    child: SvgPicture.asset(
+                                      'assets/images/delete_icon.svg',
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                const SizedBox(
+                                  width: 5,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(
+                                      () {
+                                        count == 1 ? null : count--;
+                                      },
+                                    );
+                                  },
+                                  child: Container(
+                                    height: 36,
+                                    width: 36,
+                                    decoration: BoxDecoration(
+                                      color: ThemeClass.boxColor,
+                                      borderRadius: BorderRadius.circular(4),
+                                    ),
+                                    child: const Icon(
+                                      Icons.remove,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  height: 36,
+                                  width: 36,
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xffF8F5F2),
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
+                                  child: Center(
+                                    child: Text('$count'),
+                                  ),
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(
+                                      () {
+                                        count++;
+                                      },
+                                    );
+                                  },
+                                  child: Container(
+                                    height: 36,
+                                    width: 36,
+                                    decoration: BoxDecoration(
+                                      color: ThemeClass.brandPrimary,
+                                      borderRadius: BorderRadius.circular(4),
+                                    ),
+                                    child: const Icon(
+                                      Icons.add,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 16,
+                      ),
+                      Container(
+                        margin: const EdgeInsets.symmetric(
+                          horizontal: 15,
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 9,
+                          vertical: 10,
+                        ),
+                        decoration: BoxDecoration(
+                          color: ThemeClass.containerColor,
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'My Bucket',
+                              'Payment',
                               style: GoogleFonts.poppins(
                                 color: ThemeClass.primaryColor,
                                 fontSize: 22,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                            const Expanded(
-                              child: SizedBox(),
-                            ),
-                            const Icon(
-                              Icons.add,
-                              color: ThemeClass.brandPrimary,
-                              size: 20,
-                            ),
                             const SizedBox(
-                              height: 3,
+                              height: 24,
                             ),
-                            Text(
-                              'Add items',
-                              style: GoogleFonts.poppins(
-                                color: ThemeClass.brandPrimary,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 24,
-                        ),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              height: 96,
-                              width: 72,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(4),
-                                image: DecorationImage(
-                                  fit: BoxFit.fill,
-                                  image: AssetImage(
-                                    widget.checkOutScreen.imageUrl1,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(width: 15),
-                            Column(
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  widget.checkOutScreen.food1,
+                                  'Item total ',
                                   style: GoogleFonts.poppins(
-                                    color: const Color(0xff3E4462),
+                                    color: ThemeClass.primaryColor,
                                     fontSize: 16,
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
-                                const SizedBox(
-                                  height: 8,
-                                ),
-                                Row(
-                                  children: [
-                                    Text(
-                                      widget.checkOutScreen.price1,
-                                      style: GoogleFonts.poppins(
-                                        color: const Color(0xff3E4462),
-                                        fontStyle: FontStyle.normal,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      width: 11,
-                                    ),
-                                    Text(
-                                      widget.checkOutScreen.price2,
-                                      style: GoogleFonts.poppins(
-                                        color: const Color(0xffCACACA),
-                                        fontStyle: FontStyle.normal,
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w400,
-                                        decoration: TextDecoration.lineThrough,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 9,
-                                ),
-                                Row(
-                                  children: [
-                                    CircleAvatar(
-                                        radius: 8,
-                                        backgroundColor:
-                                            const Color(0xffEDA345),
-                                        child: Center(
-                                          child: Text(
-                                            '%',
-                                            style: GoogleFonts.poppins(
-                                              color: Colors.white,
-                                              fontSize: 10,
-                                            ),
-                                          ),
-                                        )),
-                                    const SizedBox(
-                                      width: 2,
-                                    ),
-                                    Text(
-                                      'Free delivery',
-                                      style: GoogleFonts.poppins(
-                                        color: const Color(0xff7E7E7E),
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ],
+                                Text(
+                                  'NGN ' + widget.checkOutScreen.price1 * count,
+                                  style: GoogleFonts.poppins(
+                                    color: ThemeClass.primaryColor,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
                               ],
                             ),
-                            const Expanded(
-                              child: SizedBox(),
-                            ),
-                            PhysicalModel(
-                              color: Colors.black,
-                              elevation: 5,
-                              shape: BoxShape.circle,
-                              child: CircleAvatar(
-                                backgroundColor: Colors.white,
-                                radius: 16,
-                                child: SvgPicture.asset(
-                                  'assets/images/delete_icon.svg',
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
                             const SizedBox(
-                              width: 5,
+                              height: 16,
                             ),
-                            GestureDetector(
-                              onTap: () {
-                                setState(
-                                  () {
-                                    count == 1 ? null : count--;
-                                  },
-                                );
-                              },
-                              child: Container(
-                                height: 36,
-                                width: 36,
-                                decoration: BoxDecoration(
-                                  color: ThemeClass.boxColor,
-                                  borderRadius: BorderRadius.circular(4),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Delivery fee',
+                                  style: GoogleFonts.poppins(
+                                    color: ThemeClass.primaryColor,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                  ),
                                 ),
-                                child: const Icon(
-                                  Icons.remove,
-                                  color: Colors.white,
+                                Text(
+                                  'NGN 0',
+                                  style: GoogleFonts.poppins(
+                                    color: ThemeClass.primaryColor,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
-                              ),
+                              ],
                             ),
-                            Container(
-                              height: 36,
-                              width: 36,
-                              decoration: BoxDecoration(
-                                color: const Color(0xffF8F5F2),
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              child: Center(
-                                child: Text('$count'),
-                              ),
+                            const Divider(
+                              color: Color(0xffEFEFF2),
                             ),
-                            GestureDetector(
-                              onTap: () {
-                                setState(
-                                  () {
-                                    count++;
-                                  },
-                                );
-                              },
-                              child: Container(
-                                height: 36,
-                                width: 36,
-                                decoration: BoxDecoration(
-                                  color: ThemeClass.brandPrimary,
-                                  borderRadius: BorderRadius.circular(4),
+                            const SizedBox(height: 15,),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'To Pay',
+                                  style: GoogleFonts.poppins(
+                                    color: const Color(0xff000000),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                  ),
                                 ),
-                                child: const Icon(
-                                  Icons.add,
-                                  color: Colors.white,
+                                Text(
+                                    'NGN ' + widget.checkOutScreen.price1 * count,
+                                  style: GoogleFonts.poppins(
+                                    color: Colors.black, 
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
-                              ),
+                              ],
                             ),
+                                  const SizedBox(height: 16,),
                           ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(
-                      horizontal: 15,
-                    ),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 9,
-                      vertical: 10,
-                    ),
-                    decoration: BoxDecoration(
-                      color: ThemeClass.containerColor,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Payment',
-                          style: GoogleFonts.poppins(
-                            color: ThemeClass.primaryColor,
-                            fontSize: 22,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 24,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Item total ',
-                              style: GoogleFonts.poppins(
-                                color: ThemeClass.primaryColor,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            Text(
-                              'NGN ' + widget.checkOutScreen.price1 * count,
-                              style: GoogleFonts.poppins(
-                                color: ThemeClass.primaryColor,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 16,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Delivery fee',
-                              style: GoogleFonts.poppins(
-                                color: ThemeClass.primaryColor,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            Text(
-                              'NGN 0',
-                              style: GoogleFonts.poppins(
-                                color: ThemeClass.primaryColor,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const Divider(
-                          color: ThemeClass.secondaryColor,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
           ],

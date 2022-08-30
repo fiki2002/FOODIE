@@ -84,7 +84,6 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
               child: Row(
                 children: [
                   Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
@@ -130,66 +129,94 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
               height: 16,
             ),
             Container(
-                margin: const EdgeInsets.symmetric(
-                  horizontal: 10,
-                ),
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 9,
-                  vertical: 10,
-                ),
-                decoration: BoxDecoration(
-                  color: ThemeClass.containerColor,
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Column(
-                          children: [
-                            Text(
-                              'Deliver to',
-                              style: GoogleFonts.poppins(
-                                color: ThemeClass.primaryColor,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                              ),
+              margin: const EdgeInsets.symmetric(
+                horizontal: 10,
+              ),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 9,
+                vertical: 10,
+              ),
+              decoration: BoxDecoration(
+                color: ThemeClass.containerColor,
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Deliver to:',
+                            style: GoogleFonts.poppins(
+                              color: ThemeClass.primaryColor,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
                             ),
-                            Text(
-                              widget.checkOutScreen.restuarantName,
-                              style: GoogleFonts.poppins(
-                                color: ThemeClass.secondaryColor,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                              ),
+                          ),
+                          Text(
+                            widget.checkOutScreen.restuarantName,
+                            style: GoogleFonts.poppins(
+                              color: ThemeClass.secondaryColor,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
                             ),
-                          ],
-                        ),
-                        const Expanded(
-                          child: SizedBox(),
-                        ),
-                        Radio<String>(
+                          ),
+                        ],
+                      ),
+                      const Expanded(
+                        child: SizedBox(),
+                      ),
+                      Transform.scale(
+                        scale: 2,
+                        child: Radio<String>(
                           value: 'PickUp',
+                          fillColor: MaterialStateColor.resolveWith(
+                              (states) => ThemeClass.brandPrimary),
                           groupValue: _selectedRadio,
                           onChanged: (v) {
                             setState(
                               () {
-                                _selectedRadio = v!;
+                                _selectedRadio = v;
                               },
                             );
                           },
                         ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 5),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 9,
+                    ),
+                    decoration: const BoxDecoration(
+                      color: Color(0xffF2F5F8),
+                    ),
+                    child: Row(
+                      children: [
+                        SvgPicture.asset('assets/images/note.svg'),
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          'Add a note of delivery address',
+                          style: GoogleFonts.poppins(
+                            color: ThemeClass.secondaryColor,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14,
+                          ),
+                        ),
                       ],
                     ),
-                    Container(
-                      margin: const EdgeInsets.symmetric(
-                        horizontal: 9,
-                        vertical: 10,
-                      ),
-                      decoration: const BoxDecoration(),
-                    )
-                  ],
-                )),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

@@ -627,7 +627,7 @@ class _MenuItemState extends State<MenuItem> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          '$count item',
+                         count == 1 ? '$count item' : '$count items',
                           style: GoogleFonts.poppins(
                             color: ThemeClass.containerColor,
                             fontSize: 14,

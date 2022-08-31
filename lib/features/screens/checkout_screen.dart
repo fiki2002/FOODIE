@@ -24,8 +24,8 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
   bool _value = false;
   @override
   Widget build(BuildContext context) {
-    double total = (widget.checkOutScreen.price1 * count) as double;
-    print(total);
+    double times = double.parse(widget.checkOutScreen.price1);
+    
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
     return SafeArea(
@@ -508,7 +508,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                                     ),
                                     Text(
                                       'NGN ' +
-                                          widget.checkOutScreen.price1 * count,
+                                         (times * count).toString(),
                                       style: GoogleFonts.poppins(
                                         color: ThemeClass.primaryColor,
                                         fontSize: 16,
@@ -546,9 +546,6 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                                   color: Color(0xffEFEFF2),
                                   thickness: 3,
                                 ),
-                                const SizedBox(
-                                  height: 15,
-                                ),
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -563,7 +560,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                                     ),
                                     Text(
                                       'NGN ' +
-                                          widget.checkOutScreen.price1 * count,
+                                         (times * count).toString(),
                                       style: GoogleFonts.poppins(
                                         color: Colors.black,
                                         fontSize: 16,
@@ -627,7 +624,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                           ),
                         ),
                         Text(
-                          '$count X ' + widget.checkOutScreen.price1,
+                          'NGN ' + (times * count).toString(),
                           style: GoogleFonts.poppins(
                             color: ThemeClass.containerColor,
                             fontSize: 14,

@@ -26,7 +26,7 @@ class _CompleteOrderState extends State<CompleteOrder> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/woman_illustratn.png'),
+                image: AssetImage('assets/images/illustration.png'),
               ),
             ),
           ),

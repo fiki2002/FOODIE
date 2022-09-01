@@ -617,6 +617,7 @@ class _MenuItemState extends State<MenuItem> {
                 },
                 child: Container(
                   width: w,
+                  height: w * 0.15,
                   decoration: BoxDecoration(
                     color: ThemeClass.containerColor,
                     boxShadow: [
@@ -628,7 +629,7 @@ class _MenuItemState extends State<MenuItem> {
                   ),
                   child: Container(
                     margin: const EdgeInsets.all(8),
-                    padding: const EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: ThemeClass.brandPrimary,
                       borderRadius: BorderRadius.circular(4),

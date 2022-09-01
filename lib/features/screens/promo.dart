@@ -59,7 +59,7 @@ class _PromoPageState extends State<PromoPage> {
                     onTap: () {
                       Navigator.pop(context);
                     },
-                    child: SvgPicture.asset('assets/images/back.svg')),
+                    child: SvgPicture.asset('assets/images/back.svg'),),
                 Text(
                   'Today\'s Promo',
                   style: GoogleFonts.poppins(

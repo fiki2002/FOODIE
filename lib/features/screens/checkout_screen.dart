@@ -78,7 +78,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                   ),
                 ),
                 const SizedBox(
-                  height: 16,
+                  height: 12,
                 ),
                 Expanded(
                   child: SizedBox(
@@ -89,7 +89,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                         children: [
                           Container(
                             margin: const EdgeInsets.symmetric(
-                              horizontal: 15,
+                              horizontal: 10,
                             ),
                             padding: const EdgeInsets.symmetric(
                               horizontal: 9,
@@ -144,11 +144,11 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                             ),
                           ),
                           const SizedBox(
-                            height: 16,
+                            height: 12,
                           ),
                           Container(
                             margin: const EdgeInsets.symmetric(
-                              horizontal: 15,
+                              horizontal: 10,
                             ),
                             padding: const EdgeInsets.symmetric(
                               horizontal: 9,
@@ -242,11 +242,11 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                             ),
                           ),
                           const SizedBox(
-                            height: 16,
+                            height: 12,
                           ),
                           Container(
                             margin: const EdgeInsets.symmetric(
-                              horizontal: 15,
+                              horizontal: 10,
                             ),
                             padding: const EdgeInsets.symmetric(
                               horizontal: 9,
@@ -466,11 +466,11 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                             ),
                           ),
                           const SizedBox(
-                            height: 16,
+                            height: 12,
                           ),
                           Container(
                             margin: const EdgeInsets.symmetric(
-                              horizontal: 15,
+                              horizontal: 10,
                             ),
                             padding: const EdgeInsets.symmetric(
                               horizontal: 9,
@@ -578,8 +578,11 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 16,
+                const Padding(
+                  padding: EdgeInsets.only(top: 20),
+                  child: SizedBox(
+                    height: 12,
+                  ),
                 ),
               ],
             ),

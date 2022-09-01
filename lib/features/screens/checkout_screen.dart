@@ -25,7 +25,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
   @override
   Widget build(BuildContext context) {
     double times = double.parse(widget.checkOutScreen.price1);
-    
+
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
     return SafeArea(
@@ -177,7 +177,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                                           ),
                                         ),
                                         Text(
-                                          widget.checkOutScreen.restuarantName,
+                                          'Mowarid Hostel',
                                           style: GoogleFonts.poppins(
                                             color: ThemeClass.secondaryColor,
                                             fontSize: 16,
@@ -225,7 +225,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                                       SvgPicture.asset(
                                           'assets/images/note.svg'),
                                       const SizedBox(
-                                        width: 5,
+                                        width: 8,
                                       ),
                                       Text(
                                         'Add a note of delivery address',
@@ -492,7 +492,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                                   ),
                                 ),
                                 const SizedBox(
-                                  height: 24,
+                                  height: 20,
                                 ),
                                 Row(
                                   mainAxisAlignment:
@@ -507,8 +507,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                                       ),
                                     ),
                                     Text(
-                                      'NGN ' +
-                                         (times * count).toString(),
+                                      'NGN ' + (times * count).toString(),
                                       style: GoogleFonts.poppins(
                                         color: ThemeClass.primaryColor,
                                         fontSize: 16,
@@ -518,7 +517,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                                   ],
                                 ),
                                 const SizedBox(
-                                  height: 16,
+                                  height: 12,
                                 ),
                                 Row(
                                   mainAxisAlignment:
@@ -544,7 +543,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                                 ),
                                 const Divider(
                                   color: Color(0xffEFEFF2),
-                                  thickness: 3,
+                                  thickness: 2,
                                 ),
                                 Row(
                                   mainAxisAlignment:
@@ -559,8 +558,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                                       ),
                                     ),
                                     Text(
-                                      'NGN ' +
-                                         (times * count).toString(),
+                                      'NGN ' + (times * count).toString(),
                                       style: GoogleFonts.poppins(
                                         color: Colors.black,
                                         fontSize: 16,
@@ -580,6 +578,9 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                     ),
                   ),
                 ),
+                const SizedBox(
+                  height: 16,
+                ),
               ],
             ),
             Align(
@@ -589,34 +590,33 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>const CompleteOrder(),
+                      builder: (context) => const CompleteOrder(),
                     ),
                   );
                 },
                 child: Container(
                   width: w,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     color: ThemeClass.containerColor,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.3),
+                        blurRadius: 1,
+                      ),
+                    ],
                   ),
                   child: Container(
-                    margin: const EdgeInsets.all(10),
+                    margin: const EdgeInsets.all(8),
                     padding: const EdgeInsets.all(5),
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       color: ThemeClass.brandPrimary,
+                      borderRadius: BorderRadius.circular(4),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          count == 1 ? '$count item' : '$count items',
-                          style: GoogleFonts.poppins(
-                            color: ThemeClass.containerColor,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                        Text(
-                          'Checkout',
+                          'Place Order',
                           style: GoogleFonts.poppins(
                             color: ThemeClass.containerColor,
                             fontSize: 16,

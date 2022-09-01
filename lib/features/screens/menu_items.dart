@@ -233,7 +233,7 @@ class _MenuItemState extends State<MenuItem> {
                       ),
                       SizedBox(
                         width: w,
-                        height: h * 0.3,
+                        height: h * 0.31,
                         child: ListView(
                           shrinkWrap: true,
                           children: [
@@ -585,6 +585,9 @@ class _MenuItemState extends State<MenuItem> {
                     ],
                   ),
                 ),
+                const SizedBox(
+                  height: 5,
+                ),
               ],
             ),
             Align(
@@ -614,20 +617,27 @@ class _MenuItemState extends State<MenuItem> {
                 },
                 child: Container(
                   width: w,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     color: ThemeClass.containerColor,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.3),
+                        blurRadius: 1,
+                      ),
+                    ],
                   ),
                   child: Container(
-                    margin: const EdgeInsets.all(10),
+                    margin: const EdgeInsets.all(8),
                     padding: const EdgeInsets.all(5),
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       color: ThemeClass.brandPrimary,
+                      borderRadius: BorderRadius.circular(4),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                         count == 1 ? '$count item' : '$count items',
+                          count == 1 ? '$count item' : '$count items',
                           style: GoogleFonts.poppins(
                             color: ThemeClass.containerColor,
                             fontSize: 14,

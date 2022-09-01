@@ -48,7 +48,12 @@ class _MyContainerState extends State<MyContainer> {
         borderRadius: BorderRadius.circular(8),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.only(
+          left: 16,
+          right: 16,
+          top: 16,
+          bottom: 16,
+        ),
         child: Column(
           children: [
             Row(
@@ -228,7 +233,7 @@ class _MyContainerState extends State<MyContainer> {
                   onTap: () {
                     setState(
                       () {
-                    count == 1 ? null  : count--;
+                        count == 1 ? null : count--;
                       },
                     );
                   },
@@ -263,7 +268,6 @@ class _MyContainerState extends State<MyContainer> {
                         count++;
                       },
                     );
-
                   },
                   child: Container(
                     height: 36,
@@ -452,5 +456,3 @@ class _MyContainerState extends State<MyContainer> {
     );
   }
 }
-
-

@@ -129,7 +129,6 @@ class _PromoPageState extends State<PromoPage> {
               ),
               child: ListView.separated(
                 shrinkWrap: true,
-                physics: const BouncingScrollPhysics(),
                 itemBuilder: (_, index) {
                   return MyContainer(
                     food1: _myContainers[index].food1,

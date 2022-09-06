@@ -18,6 +18,7 @@ class CheckOutScreen extends StatefulWidget {
 }
 
 class _CheckOutScreenState extends State<CheckOutScreen> {
+  // ignore: prefer_typing_uninitialized_variables
   var _selectedRadio;
   int count = 1;
 
@@ -593,7 +594,21 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const CompleteOrder(),
+                      builder: (context) =>  CompleteOrder(
+                        completeScreen: MyContainer(
+                           food1: widget.checkOutScreen.food1,
+                          food2: widget.checkOutScreen.food2,
+                          foodName: widget.checkOutScreen.foodName,
+                          imageUrl1: widget.checkOutScreen.imageUrl1,
+                          imageUrl2: widget.checkOutScreen.imageUrl2,
+                          price1: widget.checkOutScreen.price1,
+                          price2: widget.checkOutScreen.price2,
+                          restuarantName: widget.checkOutScreen.restuarantName,
+                          secondFood1: widget.checkOutScreen.secondFood1,
+                          secondFood2: widget.checkOutScreen.secondFood2,
+                          bgImage: widget.checkOutScreen.bgImage,
+                        ),
+                      ),
                     ),
                   );
                 },

@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../cores/constants/color.dart';
+import '../../cores/widgets/containers.dart';
 
 class CompleteOrder extends StatefulWidget {
-  const CompleteOrder({Key? key}) : super(key: key);
+  final MyContainer completeScreen;
+  const CompleteOrder({
+    Key? key,
+    required this.completeScreen,
+  }) : super(key: key);
 
   @override
   State<CompleteOrder> createState() => _CompleteOrderState();
@@ -13,7 +18,6 @@ class CompleteOrder extends StatefulWidget {
 class _CompleteOrderState extends State<CompleteOrder> {
   @override
   Widget build(BuildContext context) {
-    double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: const Color(0xffF8F5F2),
@@ -21,7 +25,13 @@ class _CompleteOrderState extends State<CompleteOrder> {
         children: [
           SizedBox(
             height: h * 0.7,
-            child: Stack(
+            child: widget.completeScreen.food1 == '' ? Container(
+                   decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/bg.png'),
+                      ),
+                    ),
+            ) : Stack(
               children: [
                 Container(
                   decoration: const BoxDecoration(
@@ -75,14 +85,15 @@ class _CompleteOrderState extends State<CompleteOrder> {
                 height: 40,
               ),
               Container(
-                padding: EdgeInsets.symmetric(vertical: 16, horizontal: 36,),
-                
+                padding: const EdgeInsets.symmetric(
+                  vertical: 16,
+                  horizontal: 36,
+                ),
                 decoration: BoxDecoration(
                   color: ThemeClass.brandPrimary,
                   borderRadius: BorderRadius.circular(8),
-                
                 ),
-                  child: Text(
+                child: Text(
                   'Check order status',
                   style: GoogleFonts.poppins(
                     color: ThemeClass.containerColor,
@@ -90,7 +101,7 @@ class _CompleteOrderState extends State<CompleteOrder> {
                 ),
               )
             ],
-          ),  
+          ),
         ],
       ),
     );

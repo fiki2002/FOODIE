@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/features/screens/home_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../cores/constants/color.dart';
@@ -19,37 +20,53 @@ class _CompleteOrderState extends State<CompleteOrder> {
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
+    double w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: const Color(0xffF8F5F2),
       body: Column(
         children: [
-          SizedBox(
-            height: h * 0.7,
-            child: widget.completeScreen.food1 == '' ? Container(
-                   decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/bg.png'),
+          widget.completeScreen.food1 == 'Krabby Patty'
+              ? SizedBox(
+                  height: h * 0.6,
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        top: 10,
+                        left: 0,
+                        right: 95,
+                        bottom: 10,
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('assets/images/delivery.png'),
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
-            ) : Stack(
-              children: [
-                Container(
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/bg.png'),
-                    ),
+                    ],
+                  ),
+                )
+              : SizedBox(
+                  height: h * 0.6,
+                  child: Stack(
+                    children: [
+                      Container(
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/bg.png'),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 8,
+                        bottom: 35,
+                        left: 45,
+                        right: 20,
+                        child: Image.asset('assets/images/illustration.png'),
+                      ),
+                    ],
                   ),
                 ),
-                Positioned(
-                  top: 8,
-                  bottom: 35,
-                  left: 45,
-                  right: 20,
-                  child: Image.asset('assets/images/illustration.png'),
-                ),
-              ],
-            ),
-          ),
           Column(
             children: [
               Text(
@@ -84,19 +101,29 @@ class _CompleteOrderState extends State<CompleteOrder> {
               const SizedBox(
                 height: 40,
               ),
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 16,
-                  horizontal: 36,
-                ),
-                decoration: BoxDecoration(
-                  color: ThemeClass.brandPrimary,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Text(
-                  'Check order status',
-                  style: GoogleFonts.poppins(
-                    color: ThemeClass.containerColor,
+              InkWell(
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MyHomePage(),
+                    ),
+                  );
+                },
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 16,
+                    horizontal: 36,
+                  ),
+                  decoration: BoxDecoration(
+                    color: ThemeClass.brandPrimary,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Text(
+                    'Check order status',
+                    style: GoogleFonts.poppins(
+                      color: ThemeClass.containerColor,
+                    ),
                   ),
                 ),
               )

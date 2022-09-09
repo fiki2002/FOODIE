@@ -18,8 +18,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final pages = [
     const MyHomePage(),
     const PromoPage(),
-    const Text(''),
-    const Text('Waiting'),
+     const MyHomePage(),
+    const PromoPage(),
   ];
 
 
@@ -27,7 +27,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[currentIndex],
+      body: pages.elementAt(currentIndex),
       backgroundColor: Colors.white,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,

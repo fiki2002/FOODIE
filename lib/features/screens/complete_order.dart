@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/features/screens/bottom_navigation_screen.dart';
 import 'package:food_app/features/screens/home_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -106,7 +107,7 @@ class _CompleteOrderState extends State<CompleteOrder> {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const MyHomePage(),
+                      builder: (context) => const BottomNavBar(),
                     ),
                   );
                 },

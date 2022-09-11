@@ -1,7 +1,7 @@
 
 # FOODIE ✨🥂
 
-This is an app that allows users to order food from the comfort of their homes.
+This is an app UI that can allow users to order food from the comfort of their homes.
 
 Developed using the knowledge of Flutter and Dart, for the love of FOOD😋😁
  
@@ -23,7 +23,11 @@ Developed using the knowledge of Flutter and Dart, for the love of FOOD😋😁
 
 ## Screenshots📷
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+ <img src="screenshots/first.png" width="400">  <img src="screenshots/second.png" width="400"> 
+ <img src="screenshots/third.png" width="400">  <img src="screenshots/listing.png" width="400"> 
+ <img src="screenshots/fifth.png" width="400">  <img src="screenshots/sixth.png" width="400"> 
+ <img src="screenshots/seventh.png" width="400">
+
 
 
 ## ✨ Requirements 

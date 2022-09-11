@@ -24,7 +24,7 @@ Developed using the knowledge of Flutter and Dart, for the love of FOOD😋😁
 ## Screenshots📷
 
  <img src="screenshots/first.png" width="400">  <img src="screenshots/second.png" width="400"> 
- <img src="screenshots/third.png" width="400">  <img src="screenshots/listing.png" width="400"> 
+ <img src="screenshots/third.png" width="400">  <img src="screenshots/fourth.png" width="400"> 
  <img src="screenshots/fifth.png" width="400">  <img src="screenshots/sixth.png" width="400"> 
  <img src="screenshots/seventh.png" width="400">
 

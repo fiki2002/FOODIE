@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/features/screens/bottom_navigation_screen.dart';
-import 'package:food_app/features/screens/home_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../cores/constants/color.dart';
@@ -21,7 +20,6 @@ class _CompleteOrderState extends State<CompleteOrder> {
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
-    double w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: const Color(0xffF8F5F2),
       body: Column(
@@ -84,7 +82,7 @@ class _CompleteOrderState extends State<CompleteOrder> {
               Text(
                 'We\'ll deliver your order immediately and ',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.poppins(
+                style: GoogleFonts.poppins(   
                   color: ThemeClass.primaryColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w400,
